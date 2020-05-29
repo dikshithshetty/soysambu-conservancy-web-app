@@ -5,5 +5,9 @@
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--navy)
 }
