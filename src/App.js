@@ -1,12 +1,8 @@
 import React from 'react';
+import Homepage from './container/Homepage/Homepage'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-      </header>
-    </div>
-  );
-}
+const App = props => {
+  return <Homepage />;
+};
 
 export default App;

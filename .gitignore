@@ -1,9 +1,8 @@
-# Git
-.gitconfig
-.git_commit_template
-
 # IDE
 /.idea
+
+# Git
+.git-commit-template
 
 # Dependencies
 /node_modules
