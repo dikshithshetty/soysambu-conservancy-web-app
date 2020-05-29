@@ -1,13 +1,13 @@
 import React, {Fragment} from 'react';
+import MainHeader from '../../components/Headers/MainHeader/MainHeader'
 import SectionSeparator from '../../components/SectionSeperator/SectionSeparator'
-import styles from './Homepage.module.css'
 
 
 function Homepage() {
     return (
         <Fragment>
             {/* Header */}
-            <SectionSeparator type="curved" color="yellow-dark" separator_color={styles.curved}/>
+            <MainHeader/>
             {/* Announcements */}
             <SectionSeparator type="semiCircle" color="white"/>
             {/* Whats new */}

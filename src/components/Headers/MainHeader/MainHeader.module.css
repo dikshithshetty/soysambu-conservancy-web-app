@@ -1,0 +1,22 @@
+.header {
+    position: relative;
+}
+.header-title {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-family: 'Lora', serif;
+    font-size: 48px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Curved section separator styling */
+.curved {
+    height: 40vh;
+}
+.curved::after {
+    background: var(--white);
+}

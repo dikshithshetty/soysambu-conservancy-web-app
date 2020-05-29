@@ -1,4 +1,0 @@
-/* Curved section separator styling */
-.curved::after {
-    background: var(--white);
-}

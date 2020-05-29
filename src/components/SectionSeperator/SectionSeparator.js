@@ -15,7 +15,11 @@ const SectionSeparator = (props) => {
     // If a custom separator style is passed, add them to style variable.
     if (props.hasOwnProperty('separator_color')) style.push(props.separator_color);
 
-    return <div className={style.join(' ')}/>
+    return (
+        <div className={style.join(' ')}>
+            {props.children}
+        </div>
+    )
 };
 
 export default SectionSeparator
