@@ -1,9 +1,6 @@
 # IDE
 /.idea
 
-# Git
-.git-commit-template
-
 # Dependencies
 /node_modules
 /.pnp

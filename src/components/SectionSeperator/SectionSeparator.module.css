@@ -2,36 +2,38 @@
 Separator styles taken from https://wweb.dev/resources/css-separator-generator
 **/
 
+.curved {
+    position: relative;
+    height: 45vh;
+}
+.curved::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 10%;
+    bottom: 0;
+    border-top-left-radius: 10% 100%;
+    border-top-right-radius: 10% 100%;
+}
+
 .semiCircle {
     position: relative;
-    background: #2c3e50;
-    height: 50vh;
+    height: 40vh;
 }
 .semiCircle::before {
     position: absolute;
     content: '';
+    width: 60px;
+    height: 60px;
+    bottom: 0;
     left: 50%;
-    z-index: 10;
-    width: 100px;
-    height: 100px;
+    z-index: 1;
     border-radius: 50%;
     background: inherit;
     transform: translateX(-50%) translateY(37%);
-    bottom: 0px;
 }
 
-.curved {
+.square {
     position: relative;
-    background: #FEBE5B;
-    height: 40vh;
-}
-.curved::after {
-    content: '';
-    border-top-left-radius: 10% 100%;
-    border-top-right-radius: 10% 100%;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: #fff;
-    height: 10%;
+    height: 25vh;
 }

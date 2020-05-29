@@ -1,14 +1,21 @@
 import React from 'react'
-import styling from './SectionSeparator.module.css'
+import styles from './SectionSeparator.module.css'
+import colors from '../../colors.module.css'
 
-const SectionSeparator = () => (
-    /* Background color passed as prop,
-    After background color passed as prop
-    Separator type (circle, curved) passed as prop*/
+const SectionSeparator = (props) => {
+    /*
+    Props:
+        type: type of section separator to use (see SectionSeparator css).
+        color: background color to use (see colors css).
+        separator_color: background color to use for the separator element, if applicable.
+    */
+    let background_color = props.color + '-background';
+    let style = [styles[props.type], colors[background_color]];
 
-    <div className={styling.curved}>
+    // If a custom separator style is passed, add them to style variable.
+    if (props.hasOwnProperty('separator_color')) style.push(props.separator_color);
 
-    </div>
-);
+    return <div className={style.join(' ')}/>
+};
 
 export default SectionSeparator
