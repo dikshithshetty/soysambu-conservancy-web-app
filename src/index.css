@@ -1,5 +1,23 @@
-body {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: "Open Sans", sans-serif;
+}
+
+:root {
+  --black: #3D3B39;
+  --grey: #707070;
+  --navy: #275666;
+  --blue: #4FA0A3;
+  --blue-selected: #62A9AA;
+  --green: #75C79E;
+  --yellow-lighter: #FFEBCF;
+  --yellow-light: #FEC576;
+  --yellow-dark: #FEBE5B;
+  --red: #F0685D;
+  --white: #FFFFFF
 }
