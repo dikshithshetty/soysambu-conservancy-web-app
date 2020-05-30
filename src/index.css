@@ -1,13 +1,34 @@
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
 }
 
 body {
   font-family: "Lato", sans-serif;
+  font-size: 1.6rem;
   font-weight: 400;
-  font-size: 16px;
   line-height: 1.7;
-  color: var(--navy)
+  color: var(--navy);
+  box-sizing: border-box;
+}
+
+:root {
+    --black: #3D3B39;
+    --grey: #707070;
+    --navy: #275666;
+    --blue: #4FA0A3;
+    --blue-selected: #62A9AA;
+    --green: #75C79E;
+    --yellow-lighter: #FFEBCF;
+    --yellow-light: #FEC576;
+    --yellow-dark: #FEBE5B;
+    --red: #F0685D;
+    --white: #FFFFFF
 }
