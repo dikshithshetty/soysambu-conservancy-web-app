@@ -6,7 +6,7 @@ const MainHeader = (props) => {
 
     return (
         <header className={styles.header}>
-            <SectionSeparator type="curved" color="yellow-dark" separator_color={styles['curved']}>
+            <SectionSeparator type="curved" style={styles["curved"]}>
                 <h1 className={styles['header-title']}>Soysambu Conservancy</h1>
             </SectionSeparator>
         </header>

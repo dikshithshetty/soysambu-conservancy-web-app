@@ -13,9 +13,10 @@
     line-height: 1.2;
 }
 
-/* Curved section separator styling */
+/* Section separator styling */
 .curved {
     height: 40vh;
+    background: var(--yellow-dark)
 }
 .curved::after {
     background: var(--white);
