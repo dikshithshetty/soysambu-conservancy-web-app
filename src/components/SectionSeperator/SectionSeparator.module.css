@@ -1,39 +1,34 @@
-/**
-Separator styles taken from https://wweb.dev/resources/css-separator-generator
-**/
-
+/* Separator styles taken from https://wweb.dev/resources/css-separator-generator */
 .curved {
-    position: relative;
-    z-index: 0;
+  position: relative;
+  z-index: 0;
 }
 .curved::after {
-    position: absolute;
-    content: '';
-    width: 100%;
-    height: 10%;
-    bottom: 0;
-    border-top-left-radius: 10% 100%;
-    border-top-right-radius: 10% 100%;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 10%;
+  bottom: 0;
+  border-top-left-radius: 10% 100%;
+  border-top-right-radius: 10% 100%;
 }
 
-.semiCircle {
-    position: relative;
-    height: 40vh;
+.semi-circle {
+  position: relative;
 }
-.semiCircle::before {
-    position: absolute;
-    content: '';
-    width: 6rem;
-    height: 6rem;
-    bottom: 0;
-    left: 50%;
-    z-index: 1;
-    border-radius: 50%;
-    background: inherit;
-    transform: translateX(-50%) translateY(37%);
+.semi-circle::before {
+  position: absolute;
+  content: "";
+  width: 6rem;
+  height: 6rem;
+  bottom: 0;
+  left: 50%;
+  z-index: 1;
+  border-radius: 50%;
+  background: inherit;
+  transform: translateX(-50%) translateY(37%);
 }
 
 .square {
-    position: relative;
-    height: 25vh;
+  position: relative;
 }

@@ -1,21 +1,15 @@
-import React, {Fragment} from 'react';
-import MainHeader from '../../components/Headers/MainHeader/MainHeader'
-import SectionSeparator from '../../components/SectionSeperator/SectionSeparator'
-
+import React, { Fragment } from "react";
+import MainHeader from "../../components/Headers/MainHeader/MainHeader";
 
 function Homepage() {
-    return (
-        <Fragment>
-            {/* Header */}
-            <MainHeader/>
-            {/* Announcements */}
-            <SectionSeparator type="semiCircle" color="white"/>
-            {/* Whats new */}
-            <SectionSeparator type="square" color="green"/>
-            {/* NavBar */}
-        </Fragment>
-
-    )
+  return (
+    <Fragment>
+      <MainHeader />
+      {/* Announcements */}
+      {/* Whats new */}
+      {/* NavBar */}
+    </Fragment>
+  );
 }
 
-export default Homepage
+export default Homepage;

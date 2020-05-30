@@ -1,24 +1,24 @@
 /* Header Styling */
 .header {
-    position: relative;
+  position: relative;
 }
-.header-title {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.header__title {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-    font-family: 'Lora', serif;
-    font-size: 4.8rem;
-    text-align: center;
-    line-height: 1.2;
+  font-family: "Lora", serif;
+  font-size: 4.8rem;
+  text-align: center;
+  line-height: 1.2;
 }
 
 /* Section separator styling */
 .section-separator {
-    height: 40vh;
-    background: var(--yellow-dark)
+  height: 40vh;
+  background: var(--yellow-dark);
 }
 .section-separator::after {
-    background: var(--white);
+  background: var(--white);
 }
