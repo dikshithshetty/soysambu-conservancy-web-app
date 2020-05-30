@@ -11,9 +11,13 @@ function Homepage() {
         <MainHeader />
       </SectionSeparator>
 
-      <SectionSeparator type="semi-circle" style={styles["section-separator"]}></SectionSeparator>
+      <SectionSeparator type="semi-circle" style={styles["section-separator"]}>
+        <BlogItems />
+      </SectionSeparator>
 
-      <SectionSeparator type="square" style={styles["section-separator"]}></SectionSeparator>
+      <SectionSeparator type="square" style={styles["section-separator"]}>
+        <BlogItems />
+      </SectionSeparator>
     </Fragment>
   );
 }
