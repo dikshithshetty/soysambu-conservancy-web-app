@@ -1,6 +1,7 @@
 /* Header Styling */
 .header {
   position: relative;
+  height: 40vh;
 }
 .header__title {
   position: absolute;
@@ -12,13 +13,4 @@
   font-size: 4.8rem;
   text-align: center;
   line-height: 1.2;
-}
-
-/* Section separator styling */
-.section-separator {
-  height: 40vh;
-  background: var(--yellow-dark);
-}
-.section-separator::after {
-  background: var(--white);
 }
