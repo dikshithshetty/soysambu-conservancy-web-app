@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./MainHeader.module.css";
 import SectionSeparator from "../../SectionSeperator/SectionSeparator";
 
-const MainHeader = (props) => {
+const MainHeader = () => {
   return (
     <header className={styles.header}>
       <SectionSeparator type="curved" style={styles["section-separator"]}>
