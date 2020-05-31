@@ -1,9 +1,9 @@
-/* Header Styling */
+/* --- Header styling --- */
 .header {
   position: relative;
   height: 40vh;
 }
-.header__title {
+.title {
   position: absolute;
   top: 60%;
   left: 50%;

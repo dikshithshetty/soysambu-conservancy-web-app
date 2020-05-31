@@ -5,9 +5,15 @@ const SectionSeparator = (props) => {
   /*
     Props:
         type: type of section separator to use (see SectionSeparator css).
-        style: custom styling to use for the section separator.
+        theme: styling theme to use for the section separator.
+        separator_color: color to use for the separator segment (see SectionSeparator css).
     */
-  let style = [styles[props.type], props.style];
+  let style = [styles[props.type], styles[props.theme]];
+
+  // If a separator color is passed, add its corresponding style to the array.
+  if (Object.prototype.hasOwnProperty.call(props, "separator_color")) {
+    style.push(styles["separator--" + props.separator_color]);
+  }
 
   return <div className={style.join(" ")}>{props.children}</div>;
 };

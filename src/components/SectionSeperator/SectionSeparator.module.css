@@ -1,7 +1,7 @@
 /* Separator styles taken from https://wweb.dev/resources/css-separator-generator */
+/* --- Segment separator types --- */
 .curved {
   position: relative;
-  z-index: 0;
 }
 .curved::after {
   position: absolute;
@@ -30,5 +30,39 @@
 }
 
 .square {
+  padding-top: 2.2rem;
   position: relative;
+}
+
+
+/* --- Themes --- */
+.yellow-dark,
+.yellow-dark::before,
+.yellow-dark::after {
+  background: var(--yellow-dark);
+}
+
+.green,
+.green::before,
+.green::after{
+  background: var(--green);
+}
+.green p {
+  color: var(--white);
+}
+.green span {
+  color: var(--blue)
+}
+
+.white,
+.white::before,
+.white::after {
+  background: var(--white);
+}
+
+
+/* --- Separator colors --- */
+.separator--white::before,
+.separator--white::after {
+  background: var(--white);
 }
