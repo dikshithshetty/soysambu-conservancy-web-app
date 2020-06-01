@@ -3,66 +3,55 @@
 .curved {
   position: relative;
 }
-.curved::after {
+.curved h2 {
+  position: absolute;
+  top: -7%;
+  left: 9%;
+}
+.curved::before {
   position: absolute;
   content: "";
   width: 100%;
-  height: 10%;
-  bottom: 0;
+  height: 2.5rem;
+  top: 0;
   border-top-left-radius: 10% 100%;
   border-top-right-radius: 10% 100%;
+  transform: translateY(-100%)
 }
 
 .semi-circle {
   position: relative;
+  padding-top: 3rem;
+}
+.semi-circle h2 {
+  position: absolute;
+  top: 10%;
+  left: 9%;
 }
 .semi-circle::before {
   position: absolute;
   content: "";
   width: 6rem;
   height: 6rem;
-  bottom: 0;
+  top: 0;
   left: 50%;
-  z-index: 1;
   border-radius: 50%;
-  background: inherit;
-  transform: translateX(-50%) translateY(37%);
+  transform: translateX(-50%) translateY(-65%);
 }
-
-.square {
-  padding-top: 2.2rem;
-  position: relative;
-}
-
 
 /* --- Themes --- */
-.yellow-dark,
-.yellow-dark::before,
-.yellow-dark::after {
-  background: var(--yellow-dark);
-}
-
 .green,
-.green::before,
-.green::after{
+.green p,
+.green h2 {
   background: var(--green);
-}
-.green p {
   color: var(--white);
 }
 .green span {
   color: var(--blue)
 }
 
-.white,
-.white::before,
-.white::after {
-  background: var(--white);
-}
-
 
 /* --- Separator colors --- */
-.separator--white::before,
-.separator--white::after {
+.separator--white::before {
   background: var(--white);
 }
