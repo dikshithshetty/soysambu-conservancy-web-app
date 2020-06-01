@@ -1,35 +1,35 @@
 /* Colors variables */
 :root {
-    --black: #3D3B39;
-    --grey: #707070;
-    --navy: #275666;
-    --blue: #4FA0A3;
-    --blue-selected: #62A9AA;
-    --green: #75C79E;
-    --yellow-lighter: #FFEBCF;
-    --yellow-light: #FEC576;
-    --yellow-dark: #FEBE5B;
-    --red: #F0685D;
-    --white: #FFFFFF
+  --black: #3d3b39;
+  --grey: #707070;
+  --navy: #275666;
+  --blue: #4fa0a3;
+  --blue-selected: #62a9aa;
+  --green: #75c79e;
+  --yellow-lighter: #ffebcf;
+  --yellow-light: #fec576;
+  --yellow-dark: #febe5b;
+  --red: #f0685d;
+  --white: #ffffff;
 }
 
 *,
 *::after,
 *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-    font-family: "Lato", sans-serif;
-    font-size: 1.6rem;
-    font-weight: 400;
-    line-height: 1.7;
-    color: var(--navy);
-    box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--navy);
+  box-sizing: border-box;
 }

@@ -2,20 +2,32 @@ import React, { Fragment } from "react";
 import SectionSeparator from "../../components/SectionSeperator/SectionSeparator";
 import MainHeader from "../../components/Headers/MainHeader/MainHeader";
 import BlogItemList from "../../components/Blog/BlogItemList/BlogItemList";
+import BlogItem from "../../components/Blog/BlogItemList/BlogItem/BlogItem";
 
 function Homepage() {
   return (
     <Fragment>
-      <SectionSeparator type="curved" theme="yellow-dark" separator_color="white">
-        <MainHeader />
+      {/* Main Header */}
+      <MainHeader />
+
+      {/* Announcements */}
+      <SectionSeparator type="curved" separator_color="white" theme="white">
+        <section>
+          <h2>Announcements</h2>
+          <BlogItemList>
+            <BlogItem />
+          </BlogItemList>
+        </section>
       </SectionSeparator>
 
-      <SectionSeparator type="semi-circle" theme="white">
-        <BlogItemList />
-      </SectionSeparator>
-
-      <SectionSeparator type="square" theme="green">
-        <BlogItemList />
+      {/* What's New */}
+      <SectionSeparator type="semi-circle" separator_color="white" theme="green">
+        <section>
+          <h2>What&apos;s New</h2>
+          <BlogItemList>
+            <BlogItem />
+          </BlogItemList>
+        </section>
       </SectionSeparator>
     </Fragment>
   );

@@ -2,15 +2,16 @@
 .header {
   position: relative;
   height: 40vh;
+  background: var(--yellow-dark)
 }
 .title {
   position: absolute;
-  top: 60%;
+  top: 63%;
   left: 50%;
   transform: translate(-50%, -50%);
 
   font-family: "Lora", serif;
-  font-size: 4.8rem;
+  font-size: 4.6rem;
   text-align: center;
   line-height: 1.2;
 }
