@@ -1,13 +1,8 @@
 import React from "react";
-import styles from "./BlogItemList.module.css";
-import BlogItem from "./BlogItem/BlogItem";
+import styles from "./BlogItemList.module.scss";
 
-const BlogItems = () => {
-  return (
-    <div className={styles["blog-items"]}>
-      <BlogItem />
-    </div>
-  );
+const BlogItemList = (props) => {
+  return <div className={styles["blog-items"]}>{props.children}</div>;
 };
 
-export default BlogItems;
+export default BlogItemList;

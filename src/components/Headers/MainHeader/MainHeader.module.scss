@@ -1,8 +1,10 @@
+@import "../../../variables.scss";
+
 /* --- Header styling --- */
 .header {
   position: relative;
   height: 40vh;
-  background: var(--yellow-dark)
+  background: $yellow-dark;
 }
 .title {
   position: absolute;

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./SectionSeparator.module.css";
+import styles from "./SectionSeparator.module.scss";
 
 const SectionSeparator = (props) => {
   /*
