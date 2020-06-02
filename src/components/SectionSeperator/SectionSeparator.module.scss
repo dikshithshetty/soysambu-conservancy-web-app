@@ -1,4 +1,4 @@
-@import "../../variables.scss";
+@import "sass/base/base";
 
 /* --- Segment separator types --- */
 /* Taken from https://wweb.dev/resources/css-separator-generator */
@@ -13,6 +13,7 @@
     top: 0;
     border-top-left-radius: 10% 100%;
     border-top-right-radius: 10% 100%;
+    background: inherit;
     transform: translateY(-100%);
   }
 
@@ -35,6 +36,7 @@
     top: 0;
     left: 50%;
     border-radius: 50%;
+    background: inherit;
     transform: translateX(-50%) translateY(-65%);
   }
 
@@ -46,6 +48,7 @@
 }
 
 /* --- Themes --- */
+// TODO maybe turn these into Mixins if they have to be re-used.
 .green {
   background: $green;
   color: $white;
@@ -53,6 +56,10 @@
   span {
     color: $blue;
   }
+}
+
+.white {
+  background: $white;
 }
 
 /* --- Separator colors --- */

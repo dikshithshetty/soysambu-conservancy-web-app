@@ -11,7 +11,7 @@ function Homepage() {
       <MainHeader />
 
       {/* Announcements */}
-      <SectionSeparator type="curved" separator_color="white" theme="white">
+      <SectionSeparator type="curved" theme="white">
         <section>
           <h2>Announcements</h2>
           <BlogItemList>

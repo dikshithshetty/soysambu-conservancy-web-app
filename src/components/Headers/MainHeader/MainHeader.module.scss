@@ -1,4 +1,4 @@
-@import "../../../variables.scss";
+@import "sass/base/base";
 
 /* --- Header styling --- */
 .header {
@@ -12,7 +12,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  font-family: "Lora", serif;
+  font-family: $serif;
   font-size: 4.6rem;
   text-align: center;
   line-height: 1.2;
