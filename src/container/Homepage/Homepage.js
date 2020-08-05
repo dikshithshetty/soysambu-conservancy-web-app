@@ -8,7 +8,7 @@ import styles from "./Homepage.module.scss";
 
 function Homepage() {
   return (
-    <div className={styles["homepage"]}>
+    <div className={styles["hero-header"]}>
       {/* Main Header */}
       <MainHeader theme="yellow-dark" />
 
