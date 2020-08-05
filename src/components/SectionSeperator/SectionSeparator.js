@@ -8,7 +8,7 @@ const SectionSeparator = (props) => {
         theme: styling theme to use for the section separator.
         separator_color: color to use for the separator segment (see SectionSeparator css).
   */
-  let style = [styles[props.type], styles[props.theme]];
+  let style = [styles[props.type], styles["theme--" + props.theme]];
 
   // If a separator color is passed, add its corresponding style to the array.
   if (Object.prototype.hasOwnProperty.call(props, "separator_color")) {

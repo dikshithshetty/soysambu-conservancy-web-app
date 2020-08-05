@@ -11,30 +11,32 @@
     width: 100%;
     height: 2.5rem;
     top: 0;
-    border-top-left-radius: 10% 100%;
-    border-top-right-radius: 10% 100%;
+    margin-top: -2.5rem;
+    border-top-left-radius: 5rem 5rem;
+    border-top-right-radius: 5rem 5rem;
     background: inherit;
-    transform: translateY(-100%);
   }
 
   h2 {
     position: absolute;
-    top: -10%;
-    left: 9%;
+    top: -1.5rem;
+    left: 3rem;
   }
 }
 
 .semi-circle {
   position: relative;
-  padding-top: 3rem;
+  padding-top: 1.75rem;
+  overflow: hidden;
 
   &:before {
     position: absolute;
     content: "";
-    width: 6rem;
-    height: 6rem;
+    width: 5rem;
+    height: 5rem;
     top: 0;
     left: 50%;
+    z-index: 1;
     border-radius: 50%;
     background: inherit;
     transform: translateX(-50%) translateY(-65%);
@@ -42,24 +44,9 @@
 
   h2 {
     position: absolute;
-    top: 8%;
-    left: 9%;
+    top: 1rem;
+    left: 3rem;
   }
-}
-
-/* --- Themes --- */
-// TODO maybe turn these into Mixins if they have to be re-used.
-.green {
-  background: $green;
-  color: $white;
-
-  span {
-    color: $blue;
-  }
-}
-
-.white {
-  background: $white;
 }
 
 /* --- Separator colors --- */
