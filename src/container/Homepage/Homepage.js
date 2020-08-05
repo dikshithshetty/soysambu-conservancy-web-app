@@ -10,7 +10,7 @@ function Homepage() {
   return (
     <div className={styles["homepage"]}>
       {/* Main Header */}
-      <MainHeader />
+      <MainHeader theme="yellow-dark" />
 
       {/* Announcements */}
       <main>
