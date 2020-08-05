@@ -1,21 +1,16 @@
-import React from "react";
+import React, { Fragment } from "react";
 import styles from "./BlogItem.module.scss";
 
 const BlogItem = () => {
   return (
-    <div className={styles["blog-item"]}>
-      <section className={styles["grid-test"]}>
-        <div className={styles["row"]}>
-          <div className={styles["col-1-of-2"]}>Col 1 of 2</div>
-          <div className={styles["col-2-of-2"]}>Col 2 of 2</div>
-        </div>
-
-        <div className={styles["row"]}>
-          <div className={styles["col-1-of-2"]}>Col 1 of 2</div>
-          <div className={styles["col-2-of-2"]}>Col 2 of 2</div>
-        </div>
-      </section>
-    </div>
+    <Fragment>
+      <div className={styles["blog-thumbnail"]} />
+      <div className={styles["blog-item"]}>
+        <h3>Announcement Title</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elis cras...</p>
+        <span>View more</span>
+      </div>
+    </Fragment>
   );
 };
 

@@ -1,6 +1,29 @@
 @import "sass/base/base";
 
-.row {
-  max-width: 114rem;
-  margin: 0 auto;
+.blog-thumbnail {
+  height: 6rem;
+  width: 6rem;
+  background: $yellow-light;
+  border-radius: 30%;
+  margin: auto;
+}
+
+.blog-item {
+  line-height: 2rem;
+
+  h3 {
+    font-size: 1.8rem;
+    font-weight: 400;
+  }
+  p {
+    font-size: 1.6rem;
+    font-weight: 300;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+  }
+  span {
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-style: italic;
+  }
 }

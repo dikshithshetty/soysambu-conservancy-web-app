@@ -1,0 +1,6 @@
+.homepage {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax(35vh, 1fr) max-content 5rem;
+  height: 100vh;
+}
