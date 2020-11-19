@@ -1,8 +1,7 @@
 import React from "react";
 import SectionSeparator from "../../components/SectionSeperator/SectionSeparator";
 import MainHeader from "../../components/Headers/MainHeader/MainHeader";
-import BlogItemList from "../../components/Blog/BlogItemList/BlogItemList";
-import BlogItem from "../../components/Blog/BlogItemList/BlogItem/BlogItem";
+import BlogList from "../../components/Blog/BlogList/BlogList";
 import NavBar from "../../components/Navigation/NavBar/NavBar";
 import styles from "./Homepage.module.scss";
 
@@ -17,10 +16,7 @@ function Homepage() {
         <SectionSeparator type="curved" theme="white">
           <section>
             <h2>Announcements</h2>
-            <BlogItemList>
-              <BlogItem />
-              <BlogItem />
-            </BlogItemList>
+            <BlogList blogItems={["item1", "item2"]} />
           </section>
         </SectionSeparator>
 
@@ -28,9 +24,7 @@ function Homepage() {
         <SectionSeparator type="semi-circle" separator_color="white" theme="green">
           <section>
             <h2>What&apos;s New</h2>
-            <BlogItemList>
-              <BlogItem />
-            </BlogItemList>
+            <BlogList blogItems={["item1"]} />
           </section>
         </SectionSeparator>
       </main>

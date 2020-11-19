@@ -1,5 +1,5 @@
 import React from "react";
-import Homepage from "./container/Homepage/Homepage";
+import Homepage from "./pages/Homepage/Homepage";
 
 const App = (props) => {
   return <Homepage />;
