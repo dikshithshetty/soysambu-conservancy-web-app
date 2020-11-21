@@ -1,11 +1,25 @@
 /* --- Themes --- */
+.theme--yellow-dark {
+  background: $yellow-dark;
+
+  h1 {
+    color: $navy;
+  }
+}
+
+.theme--red {
+  background: $red;
+  color: $white;
+}
+
+.theme--blue {
+  background: $blue;
+  color: $white;
+}
+
 .theme--green {
   background: $green;
   color: $white;
-
-  span {
-    color: $navy;
-  }
 }
 
 .theme--white {
@@ -17,13 +31,5 @@
 
   span {
     color: $blue;
-  }
-}
-
-.theme--yellow-dark {
-  background: $yellow-dark;
-
-  h1 {
-    color: $navy;
   }
 }
