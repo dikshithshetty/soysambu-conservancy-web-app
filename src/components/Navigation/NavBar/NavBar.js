@@ -39,7 +39,7 @@ const NavBar = ({ active }) => {
     );
   });
 
-  return <nav className={styles["nav-bar"]}>{renderedNavItems}</nav>;
+  return <div className={styles["nav-bar"]}>{renderedNavItems}</div>;
 };
 
 export default NavBar;
