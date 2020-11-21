@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./PageHeader.module.scss";
-import MenuButton from "../../Navigation/Menu/MenuIcon/MenuButton";
+import MenuButton from "../../Navigation/Menu/MenuButton/MenuButton";
 
 const MainHeader = (props) => {
   return (
