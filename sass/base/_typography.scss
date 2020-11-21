@@ -1,0 +1,12 @@
+// Titles
+.hero-title {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -35%);
+
+  font-family: $serif;
+  font-size: 4.6rem;
+  text-align: center;
+  line-height: 1.2;
+}
