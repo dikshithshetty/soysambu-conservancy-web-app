@@ -1,6 +1,6 @@
-import React from "react";
+import React, { Fragment } from "react";
 import SectionSeparator from "../../components/SectionSeperator/SectionSeparator";
-import MainHeader from "../../components/Headers/MainHeader/MainHeader";
+import HeroHeader from "../../components/Headers/HeroHeader/HeroHeader";
 import BlogList from "../../components/Blog/BlogList/BlogList";
 import NavBar from "../../components/Navigation/NavBar/NavBar";
 import styles from "./Homepage.module.scss";
@@ -9,7 +9,7 @@ function Homepage() {
   return (
     <div className={styles["hero-header"]}>
       {/* Main Header */}
-      <MainHeader theme="yellow-dark" />
+      <HeroHeader theme="yellow-dark">Soysambu Conservancy</HeroHeader>
 
       {/* Announcements */}
       <main>
@@ -29,7 +29,9 @@ function Homepage() {
         </SectionSeparator>
       </main>
 
-      <NavBar active={0} />
+      <nav>
+        <NavBar active={0} />
+      </nav>
     </div>
   );
 }
