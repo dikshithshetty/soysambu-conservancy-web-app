@@ -2,14 +2,19 @@ import React from "react";
 import PageHeader from "../../../components/Headers/PageHeader/PageHeader";
 import NavBar from "../../../components/Navigation/NavBar/NavBar";
 import WideButton from "../../../components/Buttons/WideButton/WideButton";
+import SectionHeader from "../../../components/Headers/SectionHeader/SectionHeader";
+import { Link } from "react-router-dom";
 import styles from "./AddSightingMenu.module.scss";
 
-function AddSightingMenu() {
+const AddSightingMenu = () => {
   return (
     <div className={styles["standard-page"]}>
-      <PageHeader className={styles["header-title"]}>Add Sighting</PageHeader>
+      <PageHeader>Add Sighting</PageHeader>
       <div className={styles["button-list"]}>
-        <WideButton theme="yellow-dark">Rothschild's Giraffes</WideButton>
+        <SectionHeader>Select Animal</SectionHeader>
+        <Link to="/sightings/add/giraffe">
+          <WideButton theme="yellow-dark">Rothschild's Giraffe</WideButton>
+        </Link>
         <WideButton theme="red">Lions</WideButton>
         <WideButton theme="blue">Colobus Monkeys</WideButton>
         <WideButton theme="green">Birds</WideButton>
@@ -17,6 +22,6 @@ function AddSightingMenu() {
       <NavBar active={2} />
     </div>
   );
-}
+};
 
 export default AddSightingMenu;

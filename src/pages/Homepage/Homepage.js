@@ -5,7 +5,7 @@ import BlogList from "../../components/Blog/BlogList/BlogList";
 import NavBar from "../../components/Navigation/NavBar/NavBar";
 import styles from "./Homepage.module.scss";
 
-function Homepage() {
+const Homepage = () => {
   return (
     <div className={styles["hero-header"]}>
       {/* Main Header */}
@@ -34,6 +34,6 @@ function Homepage() {
       </nav>
     </div>
   );
-}
+};
 
 export default Homepage;

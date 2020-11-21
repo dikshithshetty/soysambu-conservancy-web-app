@@ -1,14 +1,13 @@
 .hamburger-menu {
-  background: $navy;
   position: relative;
   margin-top: 3rem;
 
   &,
   &::before,
   &::after {
+    display: inline-block;
     width: 3rem;
     height: 0.3rem;
-    display: inline-block;
     background-color: $navy;
   }
 
