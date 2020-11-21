@@ -29,7 +29,7 @@ function Homepage() {
         </SectionSeparator>
       </main>
 
-      <NavBar />
+      <NavBar active={0} />
     </div>
   );
 }
