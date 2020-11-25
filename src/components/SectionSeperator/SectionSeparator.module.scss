@@ -24,6 +24,20 @@
   }
 }
 
+.curved-right {
+  position: relative;
+  border-bottom-right-radius: 12% 40%;
+
+  &:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+}
+
 .semi-circle {
   position: relative;
   padding-top: 1.75rem;
@@ -49,7 +63,14 @@
   }
 }
 
+.square {
+}
+
 /* --- Separator colors --- */
 .separator--white::before {
   background: $white;
+}
+
+.separator--yellow-dark::before {
+  background: $yellow-dark;
 }

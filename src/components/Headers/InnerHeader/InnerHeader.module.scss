@@ -1,0 +1,18 @@
+@import "sass/base/base";
+
+.inner-header {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+
+  h2 {
+    font-size: 3rem;
+    line-height: 3.25rem;
+    margin-left: 2rem;
+
+    span {
+      display: block;
+      font-size: 1.75rem;
+    }
+  }
+}

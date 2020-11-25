@@ -13,17 +13,15 @@ const Homepage = () => {
 
       {/* Announcements */}
       <main>
-        <SectionSeparator type="curved" theme="white">
+        <SectionSeparator title="Announcements" type="curved" theme="white">
           <section>
-            <h2>Announcements</h2>
             <BlogList blogItems={["item1", "item2"]} />
           </section>
         </SectionSeparator>
 
         {/* What's New */}
-        <SectionSeparator type="semi-circle" separator_color="white" theme="green">
+        <SectionSeparator title="What's New" type="semi-circle" separator_color="white" theme="green">
           <section>
-            <h2>What&apos;s New</h2>
             <BlogList blogItems={["item1"]} />
           </section>
         </SectionSeparator>
