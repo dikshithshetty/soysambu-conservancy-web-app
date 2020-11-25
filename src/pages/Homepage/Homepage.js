@@ -7,7 +7,7 @@ import styles from "./Homepage.module.scss";
 
 const Homepage = () => {
   return (
-    <div className={styles["hero-header"]}>
+    <div className={styles["hero-page"]}>
       {/* Main Header */}
       <HeroHeader theme="yellow-dark">Soysambu Conservancy</HeroHeader>
 
