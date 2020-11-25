@@ -4,7 +4,7 @@ import styles from "./MenuButton.module.scss";
 const MenuButton = () => {
   return (
     <div className={styles["button"]}>
-      <span className={styles["hamburger-menu"]}>&nbsp;</span>
+      <i className={styles["hamburger-menu"]} />
     </div>
   );
 };
