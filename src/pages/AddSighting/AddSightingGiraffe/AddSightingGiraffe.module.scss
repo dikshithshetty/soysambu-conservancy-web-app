@@ -1,0 +1,12 @@
+@import "sass/base/base";
+@import "sass/layouts/inner-page";
+
+.form-input {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-column-gap: 2.5rem;
+  grid-row-gap: 3rem;
+  justify-items: center;
+  padding: 1.25rem 0 4rem 0;
+}
