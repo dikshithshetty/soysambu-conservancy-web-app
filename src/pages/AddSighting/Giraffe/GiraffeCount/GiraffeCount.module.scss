@@ -1,0 +1,28 @@
+@import "sass/base/base";
+
+.giraffe-count {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr) 5rem;
+  height: 100vh;
+}
+
+.nav-bar {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  padding: 1rem 2rem 0 2rem;
+
+  & button {
+    padding: 0.75rem;
+    color: $blue;
+    font-size: 1.6rem;
+    font-weight: 700;
+    border: none;
+    background-color: $white;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
