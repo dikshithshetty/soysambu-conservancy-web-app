@@ -1,0 +1,29 @@
+@import "sass/base/base";
+
+.input-field {
+  height: 80%;
+  width: 100%;
+  border-radius: 2.5rem;
+  border: 2px solid $blue;
+  transition: all .3s;
+  padding: 0 0 0 1.75rem;
+  margin-top: 0.25rem;
+
+  font-size: 1.7rem;
+  font-family: $sans-serif;
+  color: $grey;
+
+  &:focus {
+    outline: none;
+    border: 2px solid $blue-selected;
+
+    &:invalid {
+      border: 2px solid $red;
+    }
+  }
+}
+
+.label {
+  font-weight: 700;
+  color: white;
+}
