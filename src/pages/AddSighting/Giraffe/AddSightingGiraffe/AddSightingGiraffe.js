@@ -33,12 +33,12 @@ class AddSightingMenu extends Component {
               </div>
             </SectionSeparator>
 
-            <SectionSeparator type="semi-circle" theme="white" separator_color="yellow-dark">
-              <div className={styles["dragger-input"]}>
+            <div className={styles["dragger-input"]}>
+              <SectionSeparator type="semi-circle" theme="white" separator_color="yellow-dark">
                 <DraggerInput name="Weather" config="weather" />
                 <DraggerInput name="Habitat" config="habitat" />
-              </div>
-            </SectionSeparator>
+              </SectionSeparator>
+            </div>
             <div className={styles["nav-bar"]}>
               <Link to="/sightings/add/giraffe-count">
                 <button>Next</button>

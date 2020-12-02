@@ -9,7 +9,7 @@ const SectionSeparator = (props) => {
         separator_color: color to use for the separator segment (see SectionSeparator css).
   */
   // If separator color is passed include its CSS class.
-  let sep_style = props.separator_color ? styles["separator--" + props.separator_color] : "";
+  const sep_style = props.separator_color ? styles["separator--" + props.separator_color] : "";
 
   return (
     <div className={`${styles[props.type]} ${styles["theme--" + props.theme]} ${sep_style}`}>

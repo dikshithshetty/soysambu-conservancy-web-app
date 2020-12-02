@@ -11,7 +11,7 @@ const AddSightingMenu = () => {
     <div className={styles["standard-page"]}>
       <PageHeader>Add Sighting</PageHeader>
       <div className={styles["button-list"]}>
-        <SectionHeader>Select Animal</SectionHeader>
+        <SectionHeader span_color="white">Select Animal</SectionHeader>
         <Link to="/sightings/add/giraffe">
           <WideButton theme="yellow-dark">Rothschild's Giraffe</WideButton>
         </Link>

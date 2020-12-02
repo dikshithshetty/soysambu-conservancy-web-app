@@ -5,6 +5,28 @@
   h1 {
     color: $navy;
   }
+  h2 {
+    color: $white;
+  }
+}
+
+.theme--yellow-light {
+  background: $yellow-light;
+
+  h1 {
+    color: $navy;
+  }
+  h2 {
+    color: $white;
+  }
+}
+
+.theme--yellow-lighter {
+  background: $yellow-lighter;
+
+  h1 {
+    color: $navy;
+  }
 }
 
 .theme--red {
@@ -31,5 +53,13 @@
 
   span {
     color: $blue;
+  }
+}
+
+.theme--grey {
+  background: $white;
+
+  h2 {
+    color: $grey;
   }
 }

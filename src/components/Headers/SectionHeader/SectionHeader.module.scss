@@ -2,10 +2,12 @@
 
 .section-title {
   position: relative;
+  text-align: center;
+  font-size: 2.1rem;
 
   &:before,
   &:after {
-    z-index: -1;
+    z-index: 0;
     display: inline-block;
     position: absolute;
     content: "";
@@ -22,8 +24,41 @@
   }
 
   // span to prevent section lines from crossing text.
+ span {
+   position: relative;
+   z-index: 1;
+   padding: 0 2rem;
+ }
+}
+
+/* --- Span colors --- */
+.span--white {
   span {
+    background: $white;
+  }
+}
+
+.span--yellow-dark {
+  &:before,
+  &:after {
     background-color: $white;
-    padding: 0 2rem;
+  }
+  span {
+    background: $yellow-dark;
+  }
+}
+.span--yellow-light {
+  &:before,
+  &:after {
+    background-color: $white;
+  }
+  span {
+    background: $yellow-light;
+  }
+}
+
+.span--yellow-lighter {
+  span {
+    background: $yellow-lighter;
   }
 }
