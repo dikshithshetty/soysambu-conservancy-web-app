@@ -1,10 +1,11 @@
 import React, { Component, Fragment } from "react";
 import { reduxForm } from "redux-form";
-import InnerHeader from "../../../components/Headers/InnerHeader/InnerHeader";
-import SectionSeparator from "../../../components/SectionSeperator/SectionSeparator";
-import InputField from "../../../components/Form/InputField/InputField";
-import DraggerInput from "../../../components/Form/DraggerInput/DraggerInput";
+import InnerHeader from "../../../../components/Headers/InnerHeader/InnerHeader";
+import SectionSeparator from "../../../../components/SectionSeperator/SectionSeparator";
+import InputField from "../../../../components/Form/InputField/InputField";
+import DraggerInput from "../../../../components/Form/DraggerInput/DraggerInput";
 import styles from "./AddSightingGiraffe.module.scss";
+import { Link } from "react-router-dom";
 
 class AddSightingMenu extends Component {
   onSubmit = (formValues) => {
@@ -39,7 +40,9 @@ class AddSightingMenu extends Component {
               </div>
             </SectionSeparator>
             <div className={styles["nav-bar"]}>
-              <button>Next</button>
+              <Link to="/sightings/add/giraffe-count">
+                <button>Next</button>
+              </Link>
             </div>
           </form>
         </div>
