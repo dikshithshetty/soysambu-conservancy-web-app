@@ -1,5 +1,6 @@
-import React from "react";
+import React, { Component } from "react";
 import styles from "./InputField.module.scss";
+import { Field } from "redux-form";
 
 const get_date_range = () => {
   const date = new Date();
@@ -7,13 +8,31 @@ const get_date_range = () => {
   return [last_week.toISOString().substr(0, 10), date.toISOString().substr(0, 10)];
 };
 
-const InputField = (props) => {
-  return (
-    <label className={styles["label"]}>
-      {props.name}:<br />
-      <input className={styles["input-field"]} name={props.name} required />
-    </label>
-  );
-};
+class InputField extends Component {
+  renderError = (error, touched) => {
+    if (touched && error) {
+      console.log(error);
+    }
+  };
+
+  renderInputField = (input, meta) => {
+    return (
+      <label className={styles["label"]}>
+        {this.props.name}:<br />
+        <input
+          {...input}
+          key={this.props.name}
+          className={`${styles["input-field"]} ${meta.error && meta.touched ? styles["error"] : ""}`}
+          autoComplete="off"
+        />
+        {this.renderError(meta)}
+      </label>
+    );
+  };
+
+  render() {
+    return <Field key="Date" name={this.props.name} component={this.renderInputField} />;
+  }
+}
 
 export default InputField;

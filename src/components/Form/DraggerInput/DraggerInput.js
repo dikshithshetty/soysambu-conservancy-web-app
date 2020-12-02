@@ -1,6 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 import Dragger from "react-physics-dragger";
 import { FaCheck } from "react-icons/fa";
+import { Field } from "redux-form";
 import styles from "./DraggerInput.module.scss";
 
 const configs = {
@@ -14,31 +15,58 @@ const configs = {
   },
 };
 
-const DraggerField = (props) => {
-  const config = configs[props.config];
-  const create_dragger_elements = config.items.map((string) => {
-    return (
-      <button key={string} className={`${styles["dragger-element"]} ${styles["dragger-" + config.type]}`}>
-        <span>{string}</span>
-        <FaCheck />
-      </button>
-    );
-  });
+class DraggerField extends Component {
+  renderError = ({ error, touched }) => {
+    if (touched && error) {
+      console.log(error);
+    }
+  };
 
-  return (
-    <label className={styles["label"]}>
-      {props.name}:<br />
-      <Dragger
-        className={styles["dragger"]}
-        friction={0.8}
-        onStaticClick={(e) => {
-          console.log(e);
-        }}
-      >
-        {create_dragger_elements}
-      </Dragger>
-    </label>
-  );
-};
+  renderDraggerElements = (selectedItem, error, touched) => {
+    const config = configs[this.props.config];
+    return config.items.map((item) => {
+      const selected = item === selectedItem ? <FaCheck /> : "";
+      return (
+        <button
+          type="button"
+          key={item}
+          value={item}
+          className={
+            `${styles["dragger-element"]} ` +
+            `${styles["dragger-" + config.type]} ` +
+            `${error && touched ? styles["error"] : ""}`
+          }
+        >
+          <span>{item}</span>
+          {selected}
+        </button>
+      );
+    });
+  };
+
+  renderDraggerInput = ({ input, meta }) => {
+    return (
+      <label className={styles["label"]}>
+        {this.props.name}:<br />
+        <Dragger
+          key={this.props.name}
+          className={styles["dragger"]}
+          friction={0.8}
+          value={{ val: input.value }}
+          onStaticClick={(event) => {
+            input.onChange(event.value);
+          }}
+        >
+          {this.renderDraggerElements(input.value, meta.error, meta.touched)}
+        </Dragger>
+        {this.renderError(meta)}
+      </label>
+    );
+  };
+
+  render() {
+    return <Field name={this.props.name} component={this.renderDraggerInput} />;
+  }
+}
 
 export default DraggerField;

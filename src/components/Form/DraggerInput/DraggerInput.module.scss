@@ -30,6 +30,7 @@
     color: $grey;
     font-weight: 700;
     white-space: pre-wrap;
+    pointer-events: none
   }
 }
 
@@ -38,8 +39,11 @@
   width: 9rem;
   border: 2px solid $blue;
   border-radius: 0.5rem;
+  background-color: $white;
+  transition: all .15s;
 
   & svg {
+    animation: fadeIn .15s ease-in;
     position: absolute;
     content: '';
     top: 0.5rem;
@@ -51,4 +55,8 @@
     border-radius: 50%;
     color: white;
   }
+}
+
+.error {
+  border: 2px solid $red;
 }
