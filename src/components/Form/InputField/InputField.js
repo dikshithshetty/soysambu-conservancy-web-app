@@ -15,7 +15,7 @@ class InputField extends Component {
     }
   };
 
-  renderInputField = (input, meta) => {
+  renderInputField = ({ input, meta }) => {
     return (
       <label className={styles["label"]}>
         {this.props.name}:<br />
@@ -31,7 +31,7 @@ class InputField extends Component {
   };
 
   render() {
-    return <Field key="Date" name={this.props.name} component={this.renderInputField} />;
+    return <Field name={this.props.name} component={this.renderInputField} />;
   }
 }
 
