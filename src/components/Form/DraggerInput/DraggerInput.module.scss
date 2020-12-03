@@ -20,6 +20,7 @@
     margin-bottom: 0.2rem;
     margin-right: 1rem;
 
+    // Element labels | titles.
     & span {
       position: absolute;
       bottom: 2.5rem;
@@ -40,10 +41,10 @@
   border-radius: 0.5rem;
   background-color: $white;
   box-shadow: 0 3px 10px rgba($black, .25);
-  transition: all .15s;
+  transition: all .1s;
 
   & svg {
-    animation: fadeIn .15s ease-in;
+    animation: fadeIn .1s ease-in;
     position: absolute;
     content: '';
     top: 0.5rem;
@@ -63,7 +64,6 @@
   border: 2px solid $yellow-dark;
   border-radius: 2rem;
   background-color: $white;
-  transition: all .15s;
 }
 
 .error {

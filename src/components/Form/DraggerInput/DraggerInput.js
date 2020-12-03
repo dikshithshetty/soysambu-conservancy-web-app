@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Dragger from "react-physics-dragger";
 import { FaCheck } from "react-icons/fa";
 import { Field } from "redux-form";
+import Dragger from "react-physics-dragger";
 import styles from "./DraggerInput.module.scss";
 
 const configs = {

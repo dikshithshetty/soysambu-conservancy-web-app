@@ -1,10 +1,10 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { reduxForm } from "redux-form";
+import { Link } from "react-router-dom";
 import SectionSeparator from "../../../../components/SectionSeperator/SectionSeparator";
+import SectionHeader from "../../../../components/Headers/SectionHeader/SectionHeader";
 import DraggerInput from "../../../../components/Form/DraggerInput/DraggerInput";
 import styles from "./GiraffeCount.module.scss";
-import { Link } from "react-router-dom";
-import SectionHeader from "../../../../components/Headers/SectionHeader/SectionHeader";
 
 class GiraffeCount extends Component {
   onSubmit = (formValues) => {
@@ -14,6 +14,7 @@ class GiraffeCount extends Component {
   render() {
     return (
       <div className={styles["giraffe-count"]}>
+        {/* Counters */}
         <SectionSeparator type="square" theme="yellow-dark">
           <SectionHeader span_color="yellow-dark">Males</SectionHeader>
           <DraggerInput name="Males" config="count" />
@@ -34,6 +35,7 @@ class GiraffeCount extends Component {
           <DraggerInput name="Unidentified" config="count" />
         </SectionSeparator>
 
+        {/* NavBar */}
         <div className={styles["nav-bar"]}>
           <Link to="/sightings/add/giraffe">
             <button>Previous</button>

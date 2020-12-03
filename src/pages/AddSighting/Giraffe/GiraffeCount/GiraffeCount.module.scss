@@ -1,5 +1,7 @@
 @import "sass/base/base";
+@import "../AddSightingGiraffe/AddSightingGiraffe.module.scss";
 
+// Similar to a page partial, but we're not reusing this one (yet).
 .giraffe-count {
   display: grid;
   grid-template-columns: 1fr;
@@ -9,23 +11,8 @@
   background-color: $yellow-dark;
 }
 
+// Overriding AddSightingGiraffe NavBar.
 .nav-bar {
-  display: flex;
-  flex-grow: 1;
-  justify-content: space-between;
-  padding: 1rem 2rem 0 2rem;
   background-color: $white;
-
-  & button {
-    padding: 0.75rem;
-    color: $blue;
-    font-size: 1.6rem;
-    font-weight: 700;
-    border: none;
-    background-color: $white;
-
-    &:focus {
-      outline: none;
-    }
-  }
+  flex-direction: row;
 }
