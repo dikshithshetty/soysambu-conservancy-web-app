@@ -4,8 +4,11 @@ import { Link } from "react-router-dom";
 import SectionSeparator from "../../../../components/SectionSeperator/SectionSeparator";
 import InnerHeader from "../../../../components/Headers/InnerHeader/InnerHeader";
 import InputField from "../../../../components/Form/InputField/InputField";
-import DraggerInput from "../../../../components/Form/DraggerInput/DraggerInput";
+import DraggerSelection from "../../../../components/Form/DraggerSelection/DraggerSelection";
 import styles from "./AddSightingGiraffe.module.scss";
+
+const weather = ["Sunny", "Partially\nCloudy", "Cloudy", "Rain"];
+const habitat = ["Acacia\nWoodland", "Acacia\nMix", "Plains", "Lakefront"];
 
 class AddSightingMenu extends Component {
   onSubmit = (formValues) => {
@@ -27,17 +30,17 @@ class AddSightingMenu extends Component {
             {/* Form - Location info */}
             <SectionSeparator type="square" theme="yellow-dark">
               <div className={styles["form-input"]}>
-                <InputField name="Date" />
-                <InputField name="Time" />
-                <InputField name="Longitude" />
-                <InputField name="Latitude" />
+                <InputField name="date" />
+                <InputField name="time" />
+                <InputField name="longitude" />
+                <InputField name="latitude" />
               </div>
             </SectionSeparator>
 
             {/* Form - Environment info */}
             <SectionSeparator type="semi-circle" theme="white" separator_color="yellow-dark">
-              <DraggerInput name="Weather" label="Weather" config="weather" />
-              <DraggerInput name="Habitat" label="Habitat" config="habitat" />
+              <DraggerSelection name="weather" items={weather} />
+              <DraggerSelection name="habitat" items={habitat} />
             </SectionSeparator>
 
             {/* Form - Submit/Next */}
@@ -57,23 +60,23 @@ const validate = (formValues) => {
   let errors = {};
 
   // Missing values.
-  if (!formValues.Date) {
-    errors.Date = "Please enter a date";
+  if (!formValues.date) {
+    errors.date = "Please enter a date";
   }
-  if (!formValues.Time) {
-    errors.Time = "Please enter a time";
+  if (!formValues.time) {
+    errors.time = "Please enter a time";
   }
-  if (!formValues.Longitude) {
-    errors.Longitude = "Please enter a Longitude coordinate";
+  if (!formValues.longitude) {
+    errors.longitude = "Please enter a Longitude coordinate";
   }
-  if (!formValues.Latitude) {
-    errors.Latitude = "Please enter a Latitude coordinate";
+  if (!formValues.latitude) {
+    errors.latitude = "Please enter a Latitude coordinate";
   }
-  if (!formValues.Weather) {
-    errors.Weather = "Please enter a Longitude coordinate";
+  if (!formValues.weather) {
+    errors.weather = "Please enter a Longitude coordinate";
   }
-  if (!formValues.Habitat) {
-    errors.Habitat = "Please enter a Latitude coordinate";
+  if (!formValues.habitat) {
+    errors.habitat = "Please enter a Latitude coordinate";
   }
 
   return errors;

@@ -3,10 +3,15 @@ import { reduxForm } from "redux-form";
 import { Link } from "react-router-dom";
 import SectionSeparator from "../../../../components/SectionSeperator/SectionSeparator";
 import SectionHeader from "../../../../components/Headers/SectionHeader/SectionHeader";
-import DraggerInput from "../../../../components/Form/DraggerInput/DraggerInput";
+import DraggerGiraffes from "../../../../components/Form/DraggerGiraffes/DraggerGiraffes";
 import styles from "./GiraffeCount.module.scss";
 
 class GiraffeCount extends Component {
+  constructor(props) {
+    super(props);
+    this.males = { Eating: null, Walking: null };
+  }
+
   onSubmit = (formValues) => {
     console.log(formValues);
   };
@@ -17,22 +22,19 @@ class GiraffeCount extends Component {
         {/* Counters */}
         <SectionSeparator type="square" theme="yellow-dark">
           <SectionHeader span_color="yellow-dark">Males</SectionHeader>
-          <DraggerInput name="Males" config="count" />
+          <DraggerGiraffes items={Object.keys(this.males)} />
         </SectionSeparator>
 
         <SectionSeparator type="curved" theme="yellow-light" separator_color="yellow-dark">
           <SectionHeader span_color="yellow-light">Females</SectionHeader>
-          <DraggerInput name="Females" config="count" />
         </SectionSeparator>
 
         <SectionSeparator type="curved" theme="yellow-lighter" separator_color="yellow-light">
           <SectionHeader span_color="yellow-lighter">Juvenile</SectionHeader>
-          <DraggerInput name="Juvenile" config="count" />
         </SectionSeparator>
 
         <SectionSeparator type="curved" theme="grey" separator_color="yellow-lighter">
           <SectionHeader span_color="white">Unidentified</SectionHeader>
-          <DraggerInput name="Unidentified" config="count" />
         </SectionSeparator>
 
         {/* NavBar */}

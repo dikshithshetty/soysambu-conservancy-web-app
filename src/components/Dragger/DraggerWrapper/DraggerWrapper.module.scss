@@ -1,0 +1,30 @@
+@import "sass/base/base";
+
+.dragger {
+  overflow: hidden;
+  cursor: grab;
+  padding-top: 0.5rem;
+
+  :focus {
+    outline: none;
+  }
+
+  &-element {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0.2rem;
+    margin-right: 1rem;
+
+    // Element labels | titles.
+    & span {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      color: $grey;
+      font-weight: 700;
+      white-space: pre-wrap;
+      pointer-events: none
+    }
+  }
+}
