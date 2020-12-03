@@ -11,15 +11,11 @@
   padding: 0.5rem 0 4.5rem 0;
 }
 
-.dragger-input {
-  width: 100vw;
-}
-
 .nav-bar {
   display: flex;
   flex-grow: 1;
   flex-direction: row-reverse;
-  justify-content: right;
+  justify-content: space-between;
   padding: 1rem 2rem 0 2rem;
 
   & button {

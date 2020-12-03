@@ -5,6 +5,8 @@
   grid-template-columns: 1fr;
   grid-template-rows: repeat(4, 1fr) 5rem;
   height: 100vh;
+  overflow: auto;
+  background-color: $yellow-dark;
 }
 
 .nav-bar {
@@ -12,6 +14,7 @@
   flex-grow: 1;
   justify-content: space-between;
   padding: 1rem 2rem 0 2rem;
+  background-color: $white;
 
   & button {
     padding: 0.75rem;

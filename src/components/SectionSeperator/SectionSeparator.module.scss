@@ -3,14 +3,16 @@
 /* --- Segment separator types --- */
 /* Inspired by https://wweb.dev/resources/css-separator-generator */
 .square {
-  padding: 0.5rem 3rem 0.5rem 3rem;
+  width: 100vw;
+  padding: 1rem 3rem 0 3rem;
 }
 
 .curved {
   position: relative;
+  width: 100vw;
   border-top-left-radius: 2rem 2rem;
   border-top-right-radius: 2rem 2rem;
-  padding: 1.5rem 3rem 0 3rem;
+  padding: 1.5rem 3rem 1.5rem 3rem;
 
   &:before {
     position: absolute;
@@ -39,7 +41,8 @@
 
 .semi-circle {
   position: relative;
-  padding: 1rem 3rem 0 2.5rem;
+  width: 100vw;
+  padding: 1rem 3rem 1.5rem 2.5rem;
 
   &:before {
     position: absolute;

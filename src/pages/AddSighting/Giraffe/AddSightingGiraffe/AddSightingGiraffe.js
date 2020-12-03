@@ -27,18 +27,17 @@ class AddSightingMenu extends Component {
             <SectionSeparator type="square" theme="yellow-dark">
               <div className={styles["form-input"]}>
                 <InputField name="Date" />
-                <InputField key="Time" name="Time" />
-                <InputField key="Longitude" name="Longitude" />
-                <InputField key="Latitude" name="Latitude" />
+                <InputField name="Time" />
+                <InputField name="Longitude" />
+                <InputField name="Latitude" />
               </div>
             </SectionSeparator>
 
-            <div className={styles["dragger-input"]}>
-              <SectionSeparator type="semi-circle" theme="white" separator_color="yellow-dark">
-                <DraggerInput name="Weather" config="weather" />
-                <DraggerInput name="Habitat" config="habitat" />
-              </SectionSeparator>
-            </div>
+            <SectionSeparator type="semi-circle" theme="white" separator_color="yellow-dark">
+              <DraggerInput name="Weather" label="Weather" config="weather" />
+              <DraggerInput name="Habitat" label="Habitat" config="habitat" />
+            </SectionSeparator>
+
             <div className={styles["nav-bar"]}>
               <Link to="/sightings/add/giraffe-count">
                 <button>Next</button>
