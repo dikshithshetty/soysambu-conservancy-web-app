@@ -3,7 +3,7 @@ import DraggerWrapper from "../../Dragger/DraggerWrapper/DraggerWrapper";
 import PlusMinusButton from "../../Buttons/PlusMinusButton/PlusMinusButton";
 import styles from "./DraggerGiraffes.module.scss";
 
-const categories = ["Eating", "Walking", "Resting", "Fighting"];
+const categories = ["Feeding", "Standing", "Walking", "Lying", "Fighting", "Scratching"];
 
 const DraggerGiraffes = (props) => {
   /*

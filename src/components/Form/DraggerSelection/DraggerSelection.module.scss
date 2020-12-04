@@ -14,10 +14,9 @@
   border-radius: 0.5rem;
   background-color: $white;
   box-shadow: 0 3px 10px rgba($black, .25);
-  transition: all .1s;
+  transition: all .2s;
 
   & svg {
-    animation: fadeIn .1s ease-in;
     position: absolute;
     content: '';
     top: 0.5rem;
@@ -28,6 +27,11 @@
     background: $yellow-dark;
     border-radius: 50%;
     color: white;
+    animation: fadeIn .1s ease-in;
+  }
+
+  &:focus {
+      animation: bounce .3s ease-out;
   }
 }
 
