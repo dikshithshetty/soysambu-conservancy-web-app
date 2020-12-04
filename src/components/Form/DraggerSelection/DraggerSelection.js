@@ -14,26 +14,24 @@ class DraggerSelection extends Component {
     }
   };
 
-  renderDraggerInput = ({ input, meta }) => {
-    return (
-      <label className={styles["label"]}>
-        {`${this.props.name}:`}
-        <DraggerWrapper
-          name={this.props.name}
-          items={this.props.items}
-          value={{ val: input.value }}
-          elementAction={(item) => {
-            return input.value === item ? <FaCheck /> : "";
-          }}
-          elementStyling={`${styles["select"]} ${meta.error && meta.touched ? styles["error"] : ""}`}
-          onStaticClick={(event) => {
-            input.onChange(event.value);
-          }}
-        />
-        {this.renderError(meta)}
-      </label>
-    );
-  };
+  renderDraggerInput = ({ input, meta }) => (
+    <label className={styles["label"]}>
+      {`${this.props.name}:`}
+      <DraggerWrapper
+        name={this.props.name}
+        items={this.props.items}
+        value={{ val: input.value }}
+        elementAction={(item) => {
+          return input.value === item ? <FaCheck /> : "";
+        }}
+        elementStyling={`${styles["select"]} ${meta.error && meta.touched ? styles["error"] : ""}`}
+        onStaticClick={(event) => {
+          input.onChange(event.value);
+        }}
+      />
+      {this.renderError(meta)}
+    </label>
+  );
 
   render() {
     return <Field name={this.props.name} component={this.renderDraggerInput} />;

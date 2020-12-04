@@ -22,6 +22,7 @@ const DraggerWrapper = (props) => {
           type="button"
           value={item}
           key={`${name}-${index}`}
+          id={`${name}-${index}`}
           className={`${styles["dragger-element"]} ${elementStyling}`}
         >
           <span>{item}</span>

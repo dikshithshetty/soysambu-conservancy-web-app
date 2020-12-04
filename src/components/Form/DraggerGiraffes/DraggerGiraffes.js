@@ -27,6 +27,10 @@ const DraggerGiraffes = (props) => {
           setCountPos(f.x);
         }}
         elementStyling={styles["count"]}
+        onStaticClick={(event) => {
+          console.log(event);
+          props.input.onChange({ Feeding: 3 });
+        }}
       />
 
       {/* Category dragger */}
