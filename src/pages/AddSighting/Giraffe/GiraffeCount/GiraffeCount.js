@@ -57,12 +57,6 @@ const validate = (formValues) => {
 
 export default reduxForm({
   form: "AddSightingGiraffe",
-  initialValues: {
-    males: {},
-    females: {},
-    juveniles: {},
-    unidentified: {},
-  },
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,
   validate,
