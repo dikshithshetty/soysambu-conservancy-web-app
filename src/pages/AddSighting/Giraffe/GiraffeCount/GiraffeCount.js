@@ -8,14 +8,6 @@ import DraggerGiraffes from "../../../../components/Form/DraggerGiraffes/Dragger
 import styles from "./GiraffeCount.module.scss";
 
 class GiraffeCount extends Component {
-  constructor(props) {
-    super(props);
-    this.males = { Feeding: null, Standing: null, Walking: null, Lying: null, Fighting: null, Scratching: null };
-    this.females = { Feeding: null, Standing: null, Walking: null, Lying: null, Fighting: null, Scratching: null };
-    this.juveniles = { Feeding: null, Standing: null, Walking: null, Lying: null, Fighting: null, Scratching: null };
-    this.unidentified = { Feeding: null, Standing: null, Walking: null, Lying: null, Fighting: null, Scratching: null };
-  }
-
   onSubmit = (formValues) => {
     console.log(formValues);
   };
@@ -26,22 +18,22 @@ class GiraffeCount extends Component {
         {/* Counters */}
         <SectionSeparator type="square" theme="yellow-dark">
           <SectionHeader span_color="yellow-dark">Males</SectionHeader>
-          <Field name="males" items={Object.keys(this.males)} component={DraggerGiraffes} />
+          <Field name="males" component={DraggerGiraffes} />
         </SectionSeparator>
 
         <SectionSeparator type="curved" theme="yellow-light" separator_color="yellow-dark">
           <SectionHeader span_color="yellow-light">Females</SectionHeader>
-          <Field name="males" items={Object.keys(this.females)} component={DraggerGiraffes} />
+          <Field name="females" component={DraggerGiraffes} />
         </SectionSeparator>
 
         <SectionSeparator type="curved" theme="yellow-lighter" separator_color="yellow-light">
           <SectionHeader span_color="yellow-lighter">Juvenile</SectionHeader>
-          <Field name="males" items={Object.keys(this.juveniles)} component={DraggerGiraffes} />
+          <Field name="juveniles" component={DraggerGiraffes} />
         </SectionSeparator>
 
         <SectionSeparator type="curved" theme="grey" separator_color="yellow-lighter">
           <SectionHeader span_color="white">Unidentified</SectionHeader>
-          <Field name="males" items={Object.keys(this.unidentified)} component={DraggerGiraffes} />
+          <Field name="unidentified" component={DraggerGiraffes} />
         </SectionSeparator>
 
         {/* NavBar */}
@@ -65,6 +57,12 @@ const validate = (formValues) => {
 
 export default reduxForm({
   form: "AddSightingGiraffe",
+  initialValues: {
+    males: {},
+    females: {},
+    juveniles: {},
+    unidentified: {},
+  },
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,
   validate,

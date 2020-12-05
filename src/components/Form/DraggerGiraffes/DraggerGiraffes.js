@@ -1,9 +1,8 @@
 import React, { useState } from "react";
+import * as _ from "lodash";
 import DraggerWrapper from "../../Dragger/DraggerWrapper/DraggerWrapper";
 import PlusMinusButton from "../../Buttons/PlusMinusButton/PlusMinusButton";
 import styles from "./DraggerGiraffes.module.scss";
-
-const categories = ["Feeding", "Standing", "Walking", "Lying", "Fighting", "Scratching"];
 
 const DraggerGiraffes = (props) => {
   /*
@@ -12,43 +11,94 @@ const DraggerGiraffes = (props) => {
 
     Props:
   */
-  const [showCategories, setShowCategories] = useState(true);
+  const categories = ["Feeding", "Standing", "Walking", "Lying", "Fighting", "Scratching"];
+  const [showCategories, setShowCategories] = useState(false);
   const [countPos, setCountPos] = useState(0);
-  const [catPos, setCatPos] = useState(0);
+  const [categoryPos, setCategoryPos] = useState(0);
 
-  return (
-    <div className={styles["counter"]}>
-      {/* Count dragger */}
+  const inputHandler = (item) => (
+    <input
+      name={item}
+      type="number"
+      value={props.input.value[item] || ""}
+      onChange={({ target }) => {
+        const state = _.cloneDeep(props.input.value);
+        state[target.name] = Number(target.value);
+        props.input.onChange(state);
+      }}
+      onBlur={({ target }) => {
+        // Remove custom dragger element styling.
+        target.parentNode.classList.remove(styles["count-selected"]);
+      }}
+    />
+  );
+
+  const renderCountDragger = () => {
+    const pos = showCategories ? categoryPos : null;
+
+    const handleCountClick = (event) => {
+      const [input] = event.children;
+      input.focus();
+      // Add custom dragger element styling.
+      event.classList.add(styles["count-selected"]);
+    };
+
+    return (
       <DraggerWrapper
-        name={props.name}
-        items={props.items}
-        setPos={catPos}
+        name={`count-${props.name}`}
+        key={`count-${props.name}`}
+        items={Object.keys(props.input.value)}
+        friction={0.9}
+        setPos={pos}
         onFrame={(f) => {
           setCountPos(f.x);
         }}
         elementStyling={styles["count"]}
-        onStaticClick={(event) => {
-          console.log(event);
-          props.input.onChange({ Feeding: 3 });
-        }}
+        elementAction={(item) => inputHandler(item)}
+        onStaticClick={(event) => handleCountClick(event)}
       />
+    );
+  };
 
-      {/* Category dragger */}
+  const renderCategoryDragger = () => {
+    // Track countPos if categories are not shown.
+    const pos = showCategories ? null : countPos;
+    const items = Object.keys(props.input.value);
+
+    const handleCategoryClick = (event) => {
+      const state = _.cloneDeep(props.input.value);
+      state[event.value] = event.value in state ? state[event.value] + 1 : 1;
+      props.input.onChange(state);
+      setShowCategories(!showCategories);
+    };
+
+    return (
       <div className={`${styles["categories"]} ${showCategories ? styles["show"] : ""}`}>
         <DraggerWrapper
-          name="males-categories"
-          items={categories}
-          setPos={countPos}
+          name={`count-${props.name}`}
+          key={`count-${props.name}`}
+          items={items.concat(_.difference(categories, items))}
+          friction={0.9}
+          setPos={pos}
           onFrame={(f) => {
-            setCatPos(f.x);
+            setCategoryPos(f.x);
           }}
           elementStyling={styles["count"]}
+          elementAction={(item) => inputHandler(item)}
+          onStaticClick={(event) => handleCategoryClick(event)}
         />
       </div>
+    );
+  };
 
+  return (
+    <div className={styles["counter"]}>
+      {renderCountDragger()}
+      {renderCategoryDragger()}
       {/* Add category button */}
       <PlusMinusButton
-        callback={() => {
+        active={showCategories}
+        onClick={() => {
           setShowCategories(!showCategories);
         }}
       />

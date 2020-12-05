@@ -3,42 +3,87 @@
 .counter {
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content:space-between;
+  min-height: 8.75rem;
+  padding-right: 8rem;
   margin-top: 0.5rem;
-  padding-right: 0.5rem;
 
   & > button {
     &:last-child {
-      margin-left: 2rem;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate(-25%, -50%);
+
+      &:active {
+        transform: translateY(2px) translate(-25%, -50%);
+      }
     }
   }
 }
 
 .count {
+  position: relative;
   height: 8rem;
   width: 7.5rem;
   margin-right: 0.8rem;
   border: 2px solid $yellow-light;
   border-radius: 2rem;
   background-color: $white;
+  transition: all .1s ease-in;
+
+  &-selected {
+    border-color: $blue-selected;
+
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+
+  & > input {
+    position: absolute;
+    top: 42.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    outline: none;
+    border: none;
+    pointer-events: none;
+
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.4rem;
+    color: $grey;
+
+
+    &:focus {
+      color: $blue-selected;
+
+      & + span {
+        color: $blue-selected;
+      }
+    }
+  }
+
+  & > span {
+    font-size: 1.2rem;
+    bottom: 2rem;
+  }
 }
 
 .categories {
   position: absolute;
   top: -0.5rem;
   left: -1rem;
-  background-color: $blue-selected;
   width: calc(100% + 1.5rem);
   border-radius: 2rem;
-  padding: 0.5rem 7.9rem 1rem 1rem;
+  background-color: $blue-selected;
+  padding: 0.5rem 9rem 1rem 1rem;
 
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transition: .15s visibility step-end,
-              .15s pointer-events step-end,
-              .15s opacity ease;
+              .15s opacity ease-in;
 
   &.show {
     opacity: 1;
@@ -46,11 +91,10 @@
     pointer-events: all;
     transition: .15s visibility step-start,
                 .15s pointer-events step-start,
-                .15s opacity ease;
+                .15s opacity ease-in;
   }
 
   * > button {
     border: 2px solid $blue-selected;
   }
-
 }
