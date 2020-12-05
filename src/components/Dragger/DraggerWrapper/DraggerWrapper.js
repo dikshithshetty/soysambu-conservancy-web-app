@@ -2,46 +2,54 @@ import React, { useRef, useEffect } from "react";
 import styles from "./DraggerWrapper.module.scss";
 import Dragger from "react-physics-dragger";
 
-const DraggerWrapper = (props) => {
-  /*
-    Base Dragger component.
-  */
+/*
+  Base Dragger component.
+*/
+
+const DraggerWrapper = ({
+  name,
+  items,
+  friction = 0.8,
+  onStaticClick = null,
+  elementStyling = "",
+  elementAction = null,
+  setPos = null,
+  onFrame = null,
+}) => {
   const draggerRef = useRef();
 
-  /* Set location when setPos prop is passed. */
+  // Sets dragger to a position specified by the setPos prop.
   useEffect(() => {
-    if (draggerRef.current) {
-      draggerRef.current.setPosition(props.setPos);
+    if (draggerRef.current && setPos !== null) {
+      draggerRef.current.setPosition(setPos);
     }
-  }, [props.setPos]);
+  }, [setPos]);
 
-  const renderDraggerElements = (items, name, elementStyling = "", elementAction = null) => {
-    return items.map((item, index) => {
+  const renderDraggerElements = (items, name, elementStyling = "", elementAction = null) =>
+    items.map((item, index) => {
       return (
         <button
-          type="button"
-          value={item}
           key={`${name}-${index}`}
-          id={`${name}-${index}`}
+          value={item}
+          type="button"
           className={`${styles["dragger-element"]} ${elementStyling}`}
         >
-          <span>{item}</span>
           {elementAction ? elementAction(item) : null}
+          <span>{item}</span>
         </button>
       );
     });
-  };
 
   return (
     <Dragger
-      key={props.name}
-      friction={0.8}
+      key={name}
+      friction={friction}
       className={`${styles["dragger"]}`}
-      onFrame={props.onFrame}
-      onStaticClick={props.onStaticClick}
+      onFrame={onFrame}
+      onStaticClick={onStaticClick}
       draggerRef={(r) => (draggerRef.current = r)}
     >
-      {renderDraggerElements(props.items, props.name, props.elementStyling, props.elementAction)}
+      {items ? renderDraggerElements(items, name, elementStyling, elementAction) : ""}
     </Dragger>
   );
 };
