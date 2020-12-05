@@ -9,11 +9,11 @@ const SectionSeparator = (props) => {
         separator_color: color to use for the separator segment (see SectionSeparator css).
   */
   // If separator color is passed include its CSS class.
+  const style = props.type ? styles[props.type] : "";
   const sep_style = props.separator_color ? styles["separator--" + props.separator_color] : "";
 
   return (
-    <div className={`${styles["dynamics"]} ${styles[props.type]} ${styles["theme--" + props.theme]} ${sep_style}`}>
-      {props.title ? <h2>{props.title}</h2> : null}
+    <div className={`${styles["section"]} ${style} ${sep_style} ${styles["theme--" + props.theme]}`}>
       {props.children}
     </div>
   );

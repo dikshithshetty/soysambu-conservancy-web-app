@@ -51,6 +51,10 @@
 .theme--green {
   background: $green;
   color: $white;
+
+  span {
+    color: $navy;
+  }
 }
 
 .theme--white {

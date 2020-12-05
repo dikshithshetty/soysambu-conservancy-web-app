@@ -3,7 +3,8 @@
 .inner-header {
   display: flex;
   align-items: center;
-  padding: 2.5rem 2.25rem;
+  justify-content: left;
+  height: 100%;
 
   h2 {
     font-size: 3rem;

@@ -2,17 +2,15 @@
 
 /* --- Segment separator types --- */
 /* Inspired by https://wweb.dev/resources/css-separator-generator */
-.square {
+.section {
+  position: relative;
   width: 100vw;
-  padding: 1rem 2.5rem 1.5rem 2.5rem;
+  padding: 1.25rem 2.5rem 1.5rem 2.5rem;
 }
 
 .curved {
-  position: relative;
-  width: 100vw;
   border-top-left-radius: 2rem 2rem;
   border-top-right-radius: 2rem 2rem;
-  padding: 1rem 2.5rem 1.5rem 2.5rem;
 
   &:before {
     position: absolute;
@@ -25,14 +23,14 @@
   }
 }
 
-.curved-right {
-  position: relative;
+.curved-bottom-right {
   border-bottom-right-radius: 12% 40%;
 
   &:before {
     position: absolute;
     content: "";
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     z-index: -1;
@@ -40,9 +38,7 @@
 }
 
 .semi-circle {
-  position: relative;
-  width: 100vw;
-  padding: 1rem 2.5rem 1.5rem 2.5rem;
+  overflow: hidden;
 
   &:before {
     position: absolute;
@@ -60,7 +56,6 @@
 
 /* --- Separator colors --- */
 .separator {
-
   &--white::before {
     background: $white;
   }

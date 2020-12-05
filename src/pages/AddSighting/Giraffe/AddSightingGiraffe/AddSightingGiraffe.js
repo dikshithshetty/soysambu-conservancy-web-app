@@ -20,7 +20,7 @@ class AddSightingMenu extends Component {
       <Fragment>
         <div className={styles["inner-page"]}>
           {/* Header */}
-          <SectionSeparator type="curved-right" theme="blue" separator_color="yellow-dark">
+          <SectionSeparator type="curved-bottom-right" theme="blue" separator_color="yellow-dark">
             <InnerHeader origin="/sightings/add">
               Add Sighting <span>Rothschild's Giraffe</span>
             </InnerHeader>
@@ -28,7 +28,7 @@ class AddSightingMenu extends Component {
 
           <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
             {/* Form - Location info */}
-            <SectionSeparator type="square" theme="yellow-dark">
+            <SectionSeparator theme="yellow-dark">
               <div className={styles["form-input"]}>
                 <InputField name="date" />
                 <InputField name="time" />

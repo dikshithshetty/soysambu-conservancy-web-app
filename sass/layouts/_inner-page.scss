@@ -1,7 +1,7 @@
 .inner-page {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 11rem minmax(max-content, 1fr) 5rem;
+  grid-template-rows: 10rem minmax(max-content, 1fr) 5rem;
   height: 100vh;
   overflow: auto;
 }
