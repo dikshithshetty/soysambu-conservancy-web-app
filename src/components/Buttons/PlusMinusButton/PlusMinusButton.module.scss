@@ -40,7 +40,7 @@
 /* Active styling - Minus */
 .active {
   &:active {
-    transform: translateY(2px);
+    transform: translateY(3px);
   }
   &:before {
     transform: translate(-50%, -50%) rotate(-90deg);

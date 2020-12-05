@@ -59,18 +59,25 @@
 }
 
 /* --- Separator colors --- */
-.separator--white::before {
-  background: $white;
-}
+.separator {
 
-.separator--yellow-dark::before {
-  background: $yellow-dark;
-}
+  &--white::before {
+    background: $white;
+  }
 
-.separator--yellow-light::before {
-  background: $yellow-light;
-}
+  &--blue-selected::before {
+    background: $blue-selected;
+  }
 
-.separator--yellow-lighter::before {
-  background: $yellow-lighter;
+  &--yellow-dark::before {
+    background: $yellow-dark;
+  }
+
+  &--yellow-light::before {
+    background: $yellow-light;
+  }
+
+  &--yellow-lighter::before {
+    background: $yellow-lighter;
+  }
 }

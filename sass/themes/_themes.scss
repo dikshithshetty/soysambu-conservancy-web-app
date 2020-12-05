@@ -39,6 +39,15 @@
   color: $white;
 }
 
+.theme--blue-selected {
+  background: $blue-selected;
+  color: $white;
+
+  h2 {
+    color: $white;
+  }
+}
+
 .theme--green {
   background: $green;
   color: $white;

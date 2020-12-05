@@ -12,7 +12,7 @@ const SectionSeparator = (props) => {
   const sep_style = props.separator_color ? styles["separator--" + props.separator_color] : "";
 
   return (
-    <div className={`${styles[props.type]} ${styles["theme--" + props.theme]} ${sep_style}`}>
+    <div className={`${styles["dynamics"]} ${styles[props.type]} ${styles["theme--" + props.theme]} ${sep_style}`}>
       {props.title ? <h2>{props.title}</h2> : null}
       {props.children}
     </div>

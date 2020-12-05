@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { reduxForm } from "redux-form";
 import { Link } from "react-router-dom";
 import { Field } from "redux-form";
@@ -7,36 +7,40 @@ import SectionHeader from "../../../../components/Headers/SectionHeader/SectionH
 import DraggerGiraffes from "../../../../components/Form/DraggerGiraffes/DraggerGiraffes";
 import styles from "./GiraffeCount.module.scss";
 
+const sectionStyling = {
+  males: { type: "square", theme: "yellow-dark" },
+  females: { type: "curved", theme: "yellow-light" },
+  juveniles: { type: "curved", theme: "yellow-lighter" },
+  unidentified: { type: "curved", theme: "white" },
+};
+
 const GiraffeCount = () => {
+  const [category, setCategory] = useState("");
+  const items = Object.keys(sectionStyling);
+
   const onSubmit = (formValues) => {
     console.log(formValues);
   };
 
-  return (
-    <div className={styles["giraffe-count"]}>
-      {/* Counters */}
-      <SectionSeparator type="square" theme="yellow-dark">
-        <SectionHeader span_color="yellow-dark">Males</SectionHeader>
-        <Field name="males" component={DraggerGiraffes} />
-      </SectionSeparator>
+  const renderSections = () => {
+    return Object.keys(sectionStyling).map((item, index) => {
+      const type = sectionStyling[item].type;
+      const theme = category === item ? "blue-selected" : sectionStyling[item].theme;
+      let separator_color = index > 0 ? sectionStyling[items[index - 1]].theme : sectionStyling[item].theme;
+      separator_color = category === items[index - 1] ? "blue-selected" : separator_color;
 
-      <SectionSeparator type="curved" theme="yellow-light" separator_color="yellow-dark">
-        <SectionHeader span_color="yellow-light">Females</SectionHeader>
-        <Field name="females" component={DraggerGiraffes} />
-      </SectionSeparator>
+      return (
+        <SectionSeparator key={item} type={type} theme={theme} separator_color={separator_color}>
+          <SectionHeader span_color={theme}>{item}</SectionHeader>
+          <Field name={item} component={DraggerGiraffes} category={category} setCategory={(c) => setCategory(c)} />
+        </SectionSeparator>
+      );
+    });
+  };
 
-      <SectionSeparator type="curved" theme="yellow-lighter" separator_color="yellow-light">
-        <SectionHeader span_color="yellow-lighter">Juvenile</SectionHeader>
-        <Field name="juveniles" component={DraggerGiraffes} />
-      </SectionSeparator>
-
-      <SectionSeparator type="curved" theme="grey" separator_color="yellow-lighter">
-        <SectionHeader span_color="white">Unidentified</SectionHeader>
-        <Field name="unidentified" component={DraggerGiraffes} />
-      </SectionSeparator>
-
-      {/* NavBar */}
-      <div className={styles["nav-bar"]}>
+  const renderNavBar = () => {
+    return (
+      <div className={`${styles["nav-bar"]} ${category === items.slice(-1)[0] ? styles["nav-bar-last-category"] : ""}`}>
         <Link to="/sightings/add/giraffe">
           <button>Previous</button>
         </Link>
@@ -44,6 +48,13 @@ const GiraffeCount = () => {
           <button>Submit</button>
         </Link>
       </div>
+    );
+  };
+
+  return (
+    <div className={styles["giraffe-count"]}>
+      {renderSections()}
+      {renderNavBar()}
     </div>
   );
 };
