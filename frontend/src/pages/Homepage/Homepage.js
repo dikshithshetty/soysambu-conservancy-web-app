@@ -30,7 +30,7 @@ const Homepage = () => {
       </main>
 
       <nav>
-        <NavBar active={0} />
+        <NavBar preset="global" active={0} />
       </nav>
     </div>
   );

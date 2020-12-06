@@ -1,0 +1,10 @@
+@import "sass/base/base";
+@import "../AddSightingGiraffe/AddSightingGiraffe.module";
+// Similar to a page partial, but we're not reusing this one (yet).
+.giraffe-count {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr) 5rem;
+  height: 100vh;
+  overflow: auto;
+}

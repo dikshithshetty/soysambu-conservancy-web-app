@@ -59,6 +59,20 @@
   }
 }
 
+.triangle {
+  overflow: hidden;
+
+  &:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 50%;
+    height: 3.75rem;
+    width: 3.75rem;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+}
+
 /* --- Separator colors --- */
 .separator {
   &--white::before {

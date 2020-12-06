@@ -21,7 +21,7 @@ const AddSightingMenu = () => {
         <WideButton theme="green">Birds</WideButton>
       </div>
 
-      <NavBar active={2} />
+      <NavBar preset="global" active={2} />
     </div>
   );
 };

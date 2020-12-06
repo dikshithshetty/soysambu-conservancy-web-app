@@ -39,15 +39,20 @@ const GiraffeCount = () => {
   };
 
   const renderNavBar = () => {
+    const lastCategory = category === items.slice(-1)[0];
     return (
-      <div className={`${styles["nav-bar"]} ${category === items.slice(-1)[0] ? styles["nav-bar-last-category"] : ""}`}>
+      <SectionSeparator
+        type={"triangle"}
+        theme={lastCategory ? "blue" : "white"}
+        separator_color={lastCategory ? "blue-selected" : "white"}
+      >
         <Link to="/sightings/add/giraffe">
           <button>Previous</button>
         </Link>
         <Link to="/sightings/add/">
           <button>Submit</button>
         </Link>
-      </div>
+      </SectionSeparator>
     );
   };
 

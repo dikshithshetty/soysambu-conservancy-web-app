@@ -1,26 +1,38 @@
 @import "sass/base/base";
 
 .nav-bar {
-  display: grid;
-  grid-template-rows: 5rem;
-  grid-template-columns: repeat(4, 1fr);
   position: fixed;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+  align-items: center;
   width: 100%;
   bottom: 0;
-  z-index: 10;
   background: $blue;
 }
 
 .nav-item {
   position: relative;
   padding-top: 0.25rem;
-  text-decoration: none;
-  color: $white;
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 2.25rem;
+  background: inherit;
   text-align: center;
-  cursor: pointer;
+
+  a {
+    color: $white;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 0.1rem;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+
+    i {
+      font-size: 2.25rem;
+      display: block;
+      color: $white;
+    }
+  }
 
   // Top border
   &:before {
@@ -31,7 +43,7 @@
     top: 2px;
     left: 0;
     margin-top: -1rem;
-    background: $blue;
+    background: inherit;
   }
   &:first-child {
     &:before {
@@ -43,11 +55,6 @@
       border-top-right-radius: 7px;
     }
   }
-  i {
-    font-size: 2.25rem;
-    display: block;
-    color: $white;
-  }
 }
 
 .active {
@@ -55,4 +62,8 @@
   &:before {
     background: $blue-selected;
   }
+}
+
+.disabled {
+  pointer-events: none;
 }
