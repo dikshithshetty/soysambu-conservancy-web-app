@@ -1,3 +1,10 @@
 from django.shortcuts import render
+from rest_framework import viewsets
+from .serializers import GiraffeSightingSerializer
+from .models import GiraffeSighting
 
-# Create your views here.
+
+class GiraffeSightingView(viewsets.ModelViewSet):
+    serializer_class = GiraffeSightingSerializer
+    queryset = GiraffeSighting.objects.all()
+
