@@ -27,6 +27,7 @@
 
   // Span to prevent section lines from crossing text.
  span {
+   transition: all .15s ease-out;
    position: relative;
    z-index: 1;
    padding: 0 2rem;
