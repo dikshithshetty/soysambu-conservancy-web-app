@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import * as _ from "lodash";
 import DraggerWrapper from "../../Dragger/DraggerWrapper/DraggerWrapper";
 import PlusMinusButton from "../../Buttons/PlusMinusButton/PlusMinusButton";
@@ -13,8 +13,14 @@ const DraggerGiraffes = (props) => {
   */
   const categories = ["Feeding", "Standing", "Walking", "Lying", "Fighting", "Scratching"];
   const showCategory = props.category === props.input.name;
+  const [categoryOrder, setCategoryOrder] = useState(categories);
 
-  const inputHandler = (item) => (
+  const updateCategoryOrder = () => {
+    const items = Object.keys(props.input.value);
+    setCategoryOrder(items.concat(_.difference(categories, items)));
+  };
+
+  const renderInputHandler = (item) => (
     <input
       name={item}
       type="number"
@@ -32,6 +38,8 @@ const DraggerGiraffes = (props) => {
   );
 
   const renderCountDragger = () => {
+    const items = Object.keys(props.input.value);
+
     const handleCountClick = (event) => {
       const [input] = event.children;
       input.focus();
@@ -49,10 +57,11 @@ const DraggerGiraffes = (props) => {
       <DraggerWrapper
         name={props.name}
         key={props.name}
-        items={showCategory ? categories : Object.keys(props.input.value)}
+        items={showCategory ? categoryOrder : items}
         friction={0.9}
+        resetPos={items.length <= 3 && !showCategory}
         elementStyling={styles["count"]}
-        elementAction={(item) => inputHandler(item)}
+        elementAction={(item) => renderInputHandler(item)}
         onStaticClick={(event) => (showCategory ? handleCategoryClick(event) : handleCountClick(event))}
       />
     );
@@ -66,6 +75,7 @@ const DraggerGiraffes = (props) => {
         active={showCategory}
         onClick={() => {
           showCategory ? props.setCategory("") : props.setCategory(props.input.name);
+          updateCategoryOrder();
         }}
       />
     </div>
