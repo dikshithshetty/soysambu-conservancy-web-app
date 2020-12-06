@@ -10,6 +10,13 @@
   &-category {
     * > button {
       border: 2px solid $blue-selected;
+
+      // max i should be equal to the number of categories / items in dragger.
+      @for $i from 1 through 8 {
+        &:nth-child(#{$i}) {
+          animation: fadeIn .16s * $i ease-out, bigBounce .16s * $i ease-out;
+        }
+      }
     }
   }
 
