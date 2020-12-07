@@ -39,8 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
-    'core',
-    'sightings',
+    'rest_framework.authtoken',
+    'api.sightings',
+    'api.users'
 ]
 
 MIDDLEWARE = [
@@ -124,9 +125,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-AUTH_USER_MODEL = 'core.User'
+AUTH_USER_MODEL = 'users.User'
 
 CORS_ORIGIN_WHITELIST = (
-     'http://localhost:3000',
+     'http://localhost:3000',  # React 
  )
 
