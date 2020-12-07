@@ -22,13 +22,21 @@ class GiraffeSightingSerializer(serializers.ModelSerializer):
         model = GiraffeSighting
         fields = ('id', 'datetime', 'latitude', 'longitude', 'weather', 'habitat', 'count', 'counts')
 
+    def validate_counts(self, counts):
+        types = [count.get('type') for count in counts]
+
+        if len(counts) == 0:
+            raise ValidationError("Giraffe sightings require at least 1 giraffe count.")
+        if not len(set(types)) == len(types):
+            raise ValidationError('Giraffe count types must be unique (i.e only a single MALES entry is allowed.')
+
+        return counts
+
     def create(self, validated_data):
-        counts_data = validated_data.pop('counts')
-
-        if len(counts_data) == 0:
-            raise ValidationError('Giraffe sightings require at least 1 giraffe count.')
-
+        counts = validated_data.pop('counts')
         giraffe_sighting = GiraffeSighting.objects.create(**validated_data)
-        for count in counts_data:
+
+        for count in counts:
             GiraffeCount.objects.create(sighting=giraffe_sighting, **count)
+
         return giraffe_sighting
