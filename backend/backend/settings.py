@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
+    'core',
     'sightings',
 ]
 
@@ -123,7 +124,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+AUTH_USER_MODEL = 'core.User'
 
 CORS_ORIGIN_WHITELIST = (
      'http://localhost:3000',
  )
+
