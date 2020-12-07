@@ -46,7 +46,7 @@ class AddSightingMenu extends Component {
         {/* Form - Submit/Next */}
         <div className={styles["nav-bar"]}>
           <Link to="/sightings/add/giraffe-count">
-            <button>Next</button>
+            Next
           </Link>
         </div>
       </div>

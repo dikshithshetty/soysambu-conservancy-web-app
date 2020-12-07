@@ -12,26 +12,16 @@
 }
 
 .nav-bar {
-  position: static;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-items: center;
   background-color: $white;
+  padding: 1.25rem 3.2rem 0 0;
 
-  div {
-    display: grid;
-    align-items: center;
-    height: 100%;
-    padding: 0 3rem;
-
-    &:first-child {
-      justify-content: start;
-    }
-    &:last-child {
-      justify-content: end;
-    }
-  }
-
-  span {
+  a {
     color: $blue;
     font-size: 1.8rem;
     font-weight: 700;
+    text-decoration: none;
   }
 }

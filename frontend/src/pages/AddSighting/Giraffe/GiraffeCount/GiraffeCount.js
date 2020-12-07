@@ -6,6 +6,7 @@ import SectionSeparator from "../../../../components/SectionSeperator/SectionSep
 import SectionHeader from "../../../../components/Headers/SectionHeader/SectionHeader";
 import DraggerGiraffes from "../../../../components/Form/DraggerGiraffes/DraggerGiraffes";
 import styles from "./GiraffeCount.module.scss";
+import SubmitButton from "../../../../components/Buttons/SubmitButton/SubmitButton";
 
 const sectionStyling = {
   males: { type: "square", theme: "yellow-dark" },
@@ -46,12 +47,12 @@ const GiraffeCount = () => {
         theme={lastCategory ? "blue" : "white"}
         separator_color={lastCategory ? "blue-selected" : "white"}
       >
-        <Link to="/sightings/add/giraffe">
-          <button>Previous</button>
-        </Link>
-        <Link to="/sightings/add/">
-          <button>Submit</button>
-        </Link>
+        <div className={lastCategory ? styles["nav-bar--blue"] : styles['nav-bar']}>
+          <Link to="/sightings/add/giraffe">
+              Previous
+          </Link>
+          <SubmitButton />
+        </div>
       </SectionSeparator>
     );
   };

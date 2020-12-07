@@ -1,0 +1,32 @@
+@import "sass/base/base";
+
+.submit-button {
+  color: $blue;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 2rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  background-size: 220%;
+  background-color: transparent;
+  background-position: 100%;
+  background-image: linear-gradient(110deg, $blue-selected 0%, $blue-selected 50%, transparent 50%, transparent 100%);
+  transition: background-position .4s ease-out,
+              color .2s ease-out;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.submit-button:active {
+  color: $white;
+  background-position: 0;
+  transform: translateY(2px);
+  transition: background-position .4s ease-out,
+              color .4s ease-out,
+              transform .425s step-end;
+}
