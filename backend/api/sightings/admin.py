@@ -3,15 +3,15 @@ from .models import Sighting, GiraffeSighting, GiraffeCount
 
 
 class SightingAdmin(admin.ModelAdmin):
-    list_display = ('datetime', 'latitude', 'longitude', 'weather', 'habitat')
+    list_display = ('id', 'datetime', 'latitude', 'longitude', 'weather', 'habitat')
 
 
 class GiraffeSightingAdmin(admin.ModelAdmin):
-    list_display = ('datetime', 'count', 'latitude', 'longitude', 'weather', 'habitat')
+    list_display = ('id', 'datetime', 'count', 'latitude', 'longitude', 'weather', 'habitat')
 
 
 class GiraffeCountAdmin(admin.ModelAdmin):
-    list_display = ('sighting', 'type')
+    list_display = ('id', 'sighting', 'type')
 
 
 # Register your models here.
