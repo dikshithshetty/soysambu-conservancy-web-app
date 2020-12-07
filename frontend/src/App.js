@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
-import SlideRoutes from "react-slide-routes";
 import { Route, useLocation } from "react-router-dom";
+import SlideRoutes from "react-slide-routes";
 import Homepage from "./pages/Homepage/Homepage";
 import AddSightingMenu from "./pages/AddSighting/AddSightingMenu/AddSightingMenu";
 import AddSightingGiraffe from "./pages/AddSighting/Giraffe/AddSightingGiraffe/AddSightingGiraffe";
