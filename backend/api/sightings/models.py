@@ -2,6 +2,10 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 
+def get_longest_choice(choices):
+    return len(max([choice[0] for choice in choices], key=len))
+
+
 class Sighting(models.Model):
     class Weather(models.TextChoices):
         SUNNY = 'SUNNY', _('Sunny')
@@ -16,12 +20,14 @@ class Sighting(models.Model):
         LAKEFRONT = 'LAKEFRONT', _('Lakefront')
 
     datetime = models.DateTimeField()
+    weather = models.CharField(choices=Weather.choices, max_length=get_longest_choice(Weather.choices))
+    habitat = models.CharField(choices=Habitat.choices, max_length=get_longest_choice(Habitat.choices))
+    # Coordinates with 5 decimal places add support for precision up to 1.1m.
     latitude = models.DecimalField(max_digits=7, decimal_places=5)  # longitude = -90 to 90
-    longitude = models.DecimalField(max_digits=8, decimal_places=5)   # longitude = -180 to 180
-    weather = models.CharField(choices=Weather.choices,
-                               max_length=len(max([choice[0] for choice in Weather.choices], key=len)))
-    habitat = models.CharField(choices=Habitat.choices,
-                               max_length=len(max([choice[0] for choice in Habitat.choices], key=len)))
+    longitude = models.DecimalField(max_digits=8, decimal_places=5)  # longitude = -180 to 180
+
+    class Meta:
+        ordering = ['-datetime']
 
 
 class GiraffeSighting(Sighting):
@@ -35,9 +41,11 @@ class GiraffeCount(models.Model):
         JUVENILES = 'JUVENILES', _('Juveniles')
         UNIDENTIFIED = 'UNIDENTIFIED', _('Unidentified')
 
-    sighting = models.ForeignKey(GiraffeSighting, on_delete=models.PROTECT)
-    type = models.CharField(choices=Type.choices,
-                            max_length=len(max([choice[0] for choice in Type.choices], key=len)))
+    class Meta:
+        unique_together = [['sighting', 'type']]
+
+    sighting = models.ForeignKey(GiraffeSighting, on_delete=models.CASCADE, related_name='counts')
+    type = models.CharField(choices=Type.choices, max_length=get_longest_choice(Type.choices))
 
     feeding = models.PositiveSmallIntegerField()
     standing = models.PositiveSmallIntegerField()

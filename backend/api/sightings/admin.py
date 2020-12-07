@@ -7,7 +7,7 @@ class SightingAdmin(admin.ModelAdmin):
 
 
 class GiraffeSightingAdmin(admin.ModelAdmin):
-    list_display = ('datetime', 'count')
+    list_display = ('datetime', 'count', 'latitude', 'longitude', 'weather', 'habitat')
 
 
 class GiraffeCountAdmin(admin.ModelAdmin):
