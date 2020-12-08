@@ -16,25 +16,26 @@
     min-height: 6rem;
     min-width: 6rem;
     margin-right: 2rem;
-    border-radius: 30%;
+    border-radius: 50%;
     background: $yellow-light; // placeholder
   }
 
   &-snippet {
+    font-size: 1.6rem;
+    font-weight: 400;
+
     h3 {
-      font-size: 1.8rem;
       font-weight: 400;
+      font-size: 1.8rem;
     }
 
     p {
-      font-size: 1.6rem;
       font-weight: 300;
       padding-top: 0.2rem;
       padding-bottom: 0.2rem;
     }
 
     span {
-      font-size: 1.6rem;
       font-weight: 400;
       font-style: italic;
     }

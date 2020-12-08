@@ -22,7 +22,7 @@ const Homepage = () => {
         <SectionSeparator type="curved" theme="white" separator_color="yellow-dark">
           <div className={styles["content"]}>
             <h2>Announcements</h2>
-            <BlogList blogItems={["item1", "item2"]} thumbNail={true} />
+            <BlogList items={["item1", "item2"]} thumbNail={true} />
           </div>
         </SectionSeparator>
 
@@ -30,7 +30,7 @@ const Homepage = () => {
         <SectionSeparator type="semi-circle" theme="green" separator_color="white">
           <div className={styles["content"]}>
             <h2>What's new</h2>
-            <BlogList blogItems={["item1"]} />
+            <BlogList items={["item1"]} />
           </div>
         </SectionSeparator>
       </main>
