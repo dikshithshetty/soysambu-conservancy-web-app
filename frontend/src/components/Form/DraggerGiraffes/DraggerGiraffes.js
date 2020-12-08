@@ -26,13 +26,24 @@ const DraggerGiraffes = (props) => {
       type="number"
       value={props.input.value[item] || ""}
       onChange={({ target }) => {
-        const state = _.cloneDeep(props.input.value);
+        const state = props.input.value ? _.cloneDeep(props.input.value) : {};
         state[target.name] = Number(target.value);
         props.input.onChange(state);
       }}
       onBlur={({ target }) => {
         // Remove custom dragger element styling.
         target.parentNode.classList.remove(styles["count-selected"]);
+
+        if ( Number(target.value) === 0) {
+          // TODO make sass utility classes for things like this.
+          target.parentNode.classList.add(styles["fade-out"]);
+          setTimeout(() => {
+            const state = props.input.value ? _.cloneDeep(props.input.value) : {};
+            delete state[target.name];
+            props.input.onChange(state);
+            target.parentNode.classList.remove(styles["fade-out"]);
+          }, 180);
+        }
       }}
     />
   );
@@ -48,7 +59,7 @@ const DraggerGiraffes = (props) => {
     };
 
     const handleCategoryClick = (event) => {
-      const state = _.cloneDeep(props.input.value);
+      const state = props.input.value ? _.cloneDeep(props.input.value) : {};
       state[event.value] = event.value in state ? state[event.value] + 1 : 1;
       props.input.onChange(state);
     };

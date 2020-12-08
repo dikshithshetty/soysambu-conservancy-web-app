@@ -81,3 +81,10 @@
     bottom: 2rem;
   }
 }
+
+.fade-out {
+  transition: opacity .175s ease-in,
+              transform .175s ease-in;
+  opacity: 0;
+  transform: translateY(0.35rem);
+}

@@ -3,8 +3,8 @@
 .submit-button {
   color: $blue;
   border: none;
-  padding: 0.6rem 1.4rem;
   border-radius: 2rem;
+  padding: 0.6rem 1.4rem;
   font-size: 1.8rem;
   font-weight: 700;
   text-decoration: none;
@@ -28,5 +28,5 @@
   transform: translateY(2px);
   transition: background-position .4s ease-out,
               color .4s ease-out,
-              transform .425s step-end;
+              transform .44s cubic-bezier(1,0,.8,0);
 }

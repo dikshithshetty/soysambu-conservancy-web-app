@@ -9,7 +9,7 @@ const BlogList = ({ blogItems, thumbNail }) => {
           {thumbNail ? <div className={styles["blog-thumbnail"]} /> : ""}
           <div className={styles["blog-snippet"]}>
             <h3>Announcement Title</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elis cras... <span>> read more</span></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elis cras... <span>read more</span></p>
           </div>
         </div>
       </Fragment>

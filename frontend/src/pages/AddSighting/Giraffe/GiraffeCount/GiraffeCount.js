@@ -5,8 +5,9 @@ import { Field } from "redux-form";
 import SectionSeparator from "../../../../components/SectionSeperator/SectionSeparator";
 import SectionHeader from "../../../../components/Headers/SectionHeader/SectionHeader";
 import DraggerGiraffes from "../../../../components/Form/DraggerGiraffes/DraggerGiraffes";
-import styles from "./GiraffeCount.module.scss";
 import SubmitButton from "../../../../components/Buttons/SubmitButton/SubmitButton";
+import { validateGiraffeSightingCount } from '../FormValidate';
+import styles from "./GiraffeCount.module.scss";
 
 const sectionStyling = {
   males: { type: "square", theme: "yellow-dark" },
@@ -65,14 +66,9 @@ const GiraffeCount = () => {
   );
 };
 
-const validate = (formValues) => {
-  let errors = {};
-  return errors;
-};
-
 export default reduxForm({
   form: "AddSightingGiraffe",
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,
-  validate,
+  validate: validateGiraffeSightingCount
 })(GiraffeCount);
