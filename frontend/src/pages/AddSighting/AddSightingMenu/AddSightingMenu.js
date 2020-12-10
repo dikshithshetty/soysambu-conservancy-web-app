@@ -9,7 +9,7 @@ import styles from "./AddSightingMenu.module.scss";
 const AddSightingMenu = () => {
   return (
     <div className={styles["standard-page"]}>
-      <PageHeader>Add Sighting</PageHeader>
+      <PageHeader theme="white">Add Sighting</PageHeader>
 
       <div className={styles["button-list"]}>
         <SectionHeader span_color="white">Select Animal</SectionHeader>

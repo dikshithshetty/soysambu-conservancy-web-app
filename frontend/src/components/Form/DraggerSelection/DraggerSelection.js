@@ -1,10 +1,9 @@
 import React from "react";
 import { FaCheck } from "react-icons/fa";
-import { Field } from "redux-form";
 import DraggerWrapper from "../../Dragger/DraggerWrapper/DraggerWrapper";
 import styles from "./DraggerSelection.module.scss";
 
-const DraggerSelection = (props) => {
+const DraggerSelection = ({ input, meta, items }) => {
   /*
    */
   const renderError = ({ error, touched }) => {
@@ -13,12 +12,12 @@ const DraggerSelection = (props) => {
     }
   };
 
-  const renderDraggerInput = ({ input, meta }) => (
+  return (
     <label className={styles["label"]}>
-      {`${props.name}:`}
+      {`${input.name}:`}
       <DraggerWrapper
-        name={props.name}
-        items={props.items}
+        name={input.name}
+        items={items}
         value={{ val: input.value }}
         elementAction={(item) => (input.value === item ? <FaCheck /> : "")}
         elementStyling={`${styles["select"]} ${meta.error && meta.touched ? styles["error"] : ""}`}
@@ -26,9 +25,7 @@ const DraggerSelection = (props) => {
       />
       {renderError(meta)}
     </label>
-  );
-
-  return <Field name={props.name} component={renderDraggerInput} />;
+  )
 };
 
 export default DraggerSelection;

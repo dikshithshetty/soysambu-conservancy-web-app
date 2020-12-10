@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { reduxForm } from "redux-form";
 import { Link } from "react-router-dom";
 import { Field } from "redux-form";
+
 import SectionSeparator from "../../../../components/SectionSeperator/SectionSeparator";
 import SectionHeader from "../../../../components/Headers/SectionHeader/SectionHeader";
 import DraggerGiraffes from "../../../../components/Form/DraggerGiraffes/DraggerGiraffes";
 import SubmitButton from "../../../../components/Buttons/SubmitButton/SubmitButton";
-import { validateGiraffeSightingCount } from '../FormValidate';
+import { validateGiraffeCount, normalizeUpper, normalizeCount} from "../../../../validators"
 import styles from "./GiraffeCount.module.scss";
+
 
 const sectionStyling = {
   males: { type: "square", theme: "yellow-dark" },
@@ -59,7 +61,7 @@ const GiraffeCount = () => {
   };
 
   return (
-    <div className={styles["giraffe-count"]}>
+    <div className={styles["row-page"]}>
       {renderSections()}
       {renderNavBar()}
     </div>
@@ -70,5 +72,5 @@ export default reduxForm({
   form: "AddSightingGiraffe",
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,
-  validate: validateGiraffeSightingCount
+  validate: validateGiraffeCount
 })(GiraffeCount);

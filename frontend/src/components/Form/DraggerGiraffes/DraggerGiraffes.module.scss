@@ -14,7 +14,7 @@
       // max i should be equal to the number of categories / items in dragger.
       @for $i from 1 through 8 {
         &:nth-child(#{$i}) {
-          animation: fadeIn .16s * $i ease-out, bigBounce .16s * $i ease-out;
+          animation: fade .16s * $i ease-out, big-bounce .16s * $i ease-out;
         }
       }
     }
@@ -83,8 +83,8 @@
 }
 
 .fade-out {
+  opacity: 0;
+  transform: translateY(0.45rem);
   transition: opacity .175s ease-in,
               transform .175s ease-in;
-  opacity: 0;
-  transform: translateY(0.35rem);
 }

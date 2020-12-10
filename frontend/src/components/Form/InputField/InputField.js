@@ -1,32 +1,25 @@
-import React, { Component } from "react";
-import { Field } from "redux-form";
+import React from "react";
 import styles from "./InputField.module.scss";
 
-class InputField extends Component {
-  renderError = (error, touched) => {
+const InputField = ({ input, meta }) => {
+  const renderError = (error, touched) => {
     if (touched && error) {
       console.log(error);
     }
   };
 
-  renderInputField = ({ input, meta }) => {
-    return (
-      <label className={styles["label"]}>
-        {this.props.name}:<br />
-        <input
-          {...input}
-          key={this.props.name}
-          className={`${styles["input-field"]} ${meta.error && meta.touched ? styles["error"] : ""}`}
-          autoComplete="off"
-        />
-        {this.renderError(meta)}
-      </label>
-    );
-  };
-
-  render() {
-    return <Field name={this.props.name} component={this.renderInputField} />;
-  }
-}
+  return (
+    <label className={styles["label"]}>
+      {input.name}:<br />
+      <input
+        {...input}
+        key={input.name}
+        className={`${styles["input-field"]} ${meta.error && meta.touched ? styles["error"] : ""}`}
+        autoComplete="off"
+      />
+      {renderError(meta)}
+    </label>
+    )
+};
 
 export default InputField;

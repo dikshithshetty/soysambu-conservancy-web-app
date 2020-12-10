@@ -1,15 +1,6 @@
 @import "sass/base/base";
 
 // Similar to a page partial, but we're not reusing this one (yet).
-.giraffe-count {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, 1fr) 5.75rem;
-  height: 100vh;
-  overflow: auto;
-}
-
-
 .nav-bar {
 
   &,
