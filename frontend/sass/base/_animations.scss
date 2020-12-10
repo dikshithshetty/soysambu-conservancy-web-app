@@ -1,4 +1,4 @@
-@keyframes fadeIn {
+@keyframes fade {
    0% {
      opacity: 0;
    }
@@ -6,15 +6,6 @@
      opacity: 1;
    }
  }
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 
 @keyframes bounce {
   0% {
@@ -28,7 +19,7 @@
   }
 }
 
-@keyframes bigBounce {
+@keyframes big-bounce {
   0% {
     transform: translateY(0);
   }

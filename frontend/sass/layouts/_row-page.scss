@@ -1,0 +1,7 @@
+.row-page {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr) 5.75rem;
+  height: 100vh;
+  overflow: auto;
+}

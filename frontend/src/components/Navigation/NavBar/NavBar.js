@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { FaHome, FaGlobeAfrica, FaCameraRetro, FaDatabase } from "react-icons/fa";
 import styles from "./NavBar.module.scss";

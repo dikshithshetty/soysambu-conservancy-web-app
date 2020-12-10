@@ -2,9 +2,9 @@ import React from "react";
 import styles from "./BlogList.module.scss";
 
 const BlogList = (props) => {
-  const mapBlogItems = props.items.map((blog) => {
+  const mapBlogItems = props.items.map((blog, index) => {
     return (
-        <div className={styles["blog-preview"]}>
+        <div key={`${blog}-${index}`} className={styles["blog-preview"]}>
           {props.thumbNail ? <div className={styles["blog-thumbnail"]} /> : ""}
           <div className={styles["blog-snippet"]}>
             <h3>Announcement Title</h3>

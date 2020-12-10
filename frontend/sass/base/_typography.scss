@@ -12,12 +12,20 @@
 }
 
 .header-title {
-  color: $navy;
   font-size: 3.8rem;
   line-height: 1.2;
 }
 
+.header-title-subtitle {
+  font-size: 3rem;
+  line-height: 3.25rem;
+
+  span {
+    display: block;
+    font-size: 1.75rem;
+  }
+}
+
 .section-title {
   font-family: $serif;
-  color: $grey;
 }

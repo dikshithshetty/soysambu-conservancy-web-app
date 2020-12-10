@@ -6,7 +6,7 @@ const InnerHeader = (props) => {
   return (
     <div className={styles["inner-header"]}>
       <BackButton origin={props.origin} />
-      <h2>{props.children}</h2>
+      <h2 className={styles["header-title-subtitle"]}>{props.children}</h2>
     </div>
   );
 };

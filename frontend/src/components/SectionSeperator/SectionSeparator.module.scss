@@ -76,12 +76,16 @@
 
 /* --- Separator colors --- */
 .separator {
-  &--white::before {
-    background: $white;
+  &--blue::before {
+    background: $blue;
   }
 
   &--blue-selected::before {
     background: $blue-selected;
+  }
+
+  &--green::before {
+    background: $green;
   }
 
   &--yellow-dark::before {
@@ -94,5 +98,9 @@
 
   &--yellow-lighter::before {
     background: $yellow-lighter;
+  }
+
+  &--white::before {
+    background: $white;
   }
 }
