@@ -64,9 +64,11 @@ const DraggerCategoryCount = (props) => {
     };
 
     const handleCategoryClick = (event) => {
-      const state = _.cloneDeep(field.value);
-      state[event.value] = event.value in state ? state[event.value] + 1 : 1;
-      setFieldValue(field.name, state);
+      if (event.value) {
+        const state = _.cloneDeep(field.value);
+        state[event.value] = event.value in state ? state[event.value] + 1 : 1;
+        setFieldValue(field.name, state);
+      }
     };
 
     return (
