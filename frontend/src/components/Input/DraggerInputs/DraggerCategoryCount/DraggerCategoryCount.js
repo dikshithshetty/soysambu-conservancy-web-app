@@ -30,6 +30,12 @@ const DraggerCategoryCount = (props) => {
       name={item}
       type="number"
       value={field.value[item] || ""}
+      // Always place cursor at the end of value.
+      onFocus={({ target }) => {
+        target.value = '';
+        target.value = field.value[target.name];
+      }}
+      // Update state with new value.
       onChange={({ target }) => {
         const state = _.cloneDeep(field.value);
         state[target.name] = Number(target.value);
@@ -39,6 +45,7 @@ const DraggerCategoryCount = (props) => {
         // Remove custom dragger element styling.
         target.parentNode.classList.remove(styles["count-selected"]);
 
+        // Check if item should be removed (val == 0).
         if ( Number(target.value) === 0) {
           // TODO make sass utility classes for things like this.
           target.parentNode.classList.add(styles["fade-out"]);
