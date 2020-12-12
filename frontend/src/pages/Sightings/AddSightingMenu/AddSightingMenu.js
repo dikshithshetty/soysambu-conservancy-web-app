@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./AddSightingMenu.module.scss";
 import PageHeader from "../../../components/Headers/PageHeader/PageHeader";
 import SectionHeader from "../../../components/Headers/SectionHeader/SectionHeader";
 import WideButton from "../../../components/Buttons/WideButton/WideButton";
 import NavBar from "../../../components/Navigation/NavBar/NavBar";
+import styles from "./AddSightingMenu.module.scss";
 
 const AddSightingMenu = () => {
   return (

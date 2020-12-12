@@ -31,7 +31,7 @@ const GiraffeWizardForm = () => (
     <WizardStep
       className={styles["inner-page-no-header"]}
       onSubmit={() => console.log('Step2 onSubmit')}>
-      {GiraffeCountForm()}
+      <GiraffeCountForm/>
     </WizardStep>
   </WizardForm>
 );

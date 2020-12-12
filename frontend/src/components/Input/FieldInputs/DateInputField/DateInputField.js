@@ -1,5 +1,6 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { useField, useFormikContext } from "formik";
+import { FaCalendarCheck, FaClock } from "react-icons/fa";
 import { parseISO } from 'date-fns'
 import { enGB } from 'date-fns/locale'
 import { useDateInput, DatePicker } from 'react-nice-dates'
@@ -8,30 +9,36 @@ import styles from './DateInputField.module.scss'
 
 const DateInputField = (props) => {
   const { setFieldValue } = useFormikContext();
-  const [field, meta] = useField(props);
+  const [field] = useField(props);
 
   // onChange handler for all date inputs.
+  // Standard ISO dates are always UTC, thus we compensate for this by manually adding
+  // the timezone offset.
   const onDateChange = (d) => {
-    setFieldValue(field.name, d.toISOString());
-    console.log(field.value)
+    const timeZoneOffset = d.getTimezoneOffset() * 60000; //offset in milliseconds.
+    const localISOTime = (new Date(d - timeZoneOffset)).toISOString().slice(0, -1);
+    setFieldValue(field.name, localISOTime);
   };
 
   // useDateInput hook from react-nice-dates for parsing text date input.
   const inputProps = useDateInput({
     date: parseISO(field.value),
-    format: props.name === 'time' ? 'HH:mm' : 'yyyy/MM/dd',
+    format: props.type === 'time' ? 'HH:mm' : 'yyyy/MM/dd',
     locale: enGB,
     onDateChange: onDateChange
   });
 
-  const renderDateInputWithReset = (props) => (
-    <Fragment>
-      {/*<button type="button" onClick={() => onDateChange(new Date())}>Set today</button>*/}
-      <input className={styles["input-field"]} {...inputProps} />
-    </Fragment>
-  );
+  const renderDateInputWithReset = (props) => {
+    const button = props.type === 'time' ? <FaClock /> : <FaCalendarCheck />;
+    return (
+      <div className={styles["input"]}>
+        <input className={`${styles["input-field"]} ${styles["input-field-has-button"]}`} {...inputProps} />
+        <button className={styles["input-button"]} type="button" onClick={() => onDateChange(new Date())}>{button}</button>
+      </div>
+    )
+  };
 
-  const renderDatePickerCalender = (props) => (
+  const renderDatePickerCalendar = () => (
       <DatePicker
         date={parseISO(field.value)}
         onDateChange={onDateChange}
@@ -45,10 +52,22 @@ const DateInputField = (props) => {
       </DatePicker>
   );
 
+  const renderSwitch = (props) => {
+    switch(props.type) {
+      case 'calendar':
+        return renderDatePickerCalendar(props);
+      case 'time':
+      case 'string':
+        return renderDateInputWithReset(props);
+      default:
+        return null;
+    }
+  };
+
   return (
     <label htmlFor={props.name} className={styles["label"]}>
       {props.name}:<br/>
-      {renderDateInputWithReset(props)}
+      {renderSwitch(props)}
     </label>
   )
 };

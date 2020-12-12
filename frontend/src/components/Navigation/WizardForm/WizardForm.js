@@ -57,6 +57,6 @@ const Wizard = ({ children, initialValues, onSubmit }) => {
   );
 };
 
-// WizardStep allows you to wrap form content with styling, and supply validation / submit logic.
+// WizardStep allows us to wrap form content with styling, and supply validation / submit logic.
 export const WizardStep = ({children}) => children;
 export default Wizard;

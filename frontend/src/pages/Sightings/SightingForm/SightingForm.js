@@ -1,12 +1,12 @@
 import React, { Fragment } from "react";
-import styles from "./SightingForm.module.scss";
-
 import SectionSeparator from "../../../components/SectionSeperator/SectionSeparator";
 import InnerHeader from "../../../components/Headers/InnerHeader/InnerHeader";
 import DateInputField from "../../../components/Input/FieldInputs/DateInputField/DateInputField";
 import InputField from "../../../components/Input/FieldInputs/InputField/InputField";
 import DraggerSelection from "../../../components/Input/DraggerInputs/DraggerSelection/DraggerSelection";
+import styles from "./SightingForm.module.scss";
 
+// These categories are universal for all sightings.
 const weather = ["Sunny", "Partially\nCloudy", "Cloudy", "Rain"];
 const habitat = ["Acacia\nWoodland", "Acacia\nMix", "Plains", "Lakefront"];
 
@@ -22,11 +22,13 @@ const SightingForm = (props) =>  {
       <div>
         {/* Location info */}
         <SectionSeparator theme={props.theme}>
-          <div className={styles["form-input"]}>
-            <DateInputField name="date" type="text"/>
-            <DateInputField name="time" type="text"/>
-            <InputField name="longitude" type="text"/>
-            <InputField name="latitude" type="text"/>
+          <div className={styles["date-input"]}>
+            <DateInputField name="date" type="string"/>
+            <DateInputField name="time" type="time"/>
+          </div>
+          <div className={styles["location-input"]}>
+            <InputField name="longitude" />
+            <InputField name="latitude" />
           </div>
         </SectionSeparator>
 
