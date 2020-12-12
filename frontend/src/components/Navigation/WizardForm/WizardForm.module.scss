@@ -1,12 +1,10 @@
 @import "sass/base/base";
 
 .nav-bar {
+  position: relative;
   display: flex;
   justify-content: space-between;
-  padding: 0 0 0 0.7rem ;
-  position: sticky;
-  bottom: 0;
-  left: 0;
+  padding-left: 0.7rem;
   transition: all .15s ease-out;
 
   button {
@@ -22,10 +20,29 @@
     &:focus {
       outline: none;
     }
-    // Place button on the right if only child.
-    &:only-child {
-      flex-grow: 1;
-      text-align: right;
+    // Place button on the right if only 1 button.
+    &:only-of-type {
+      margin-left: auto;
+      padding-right: 0.7rem;
     }
+  }
+}
+.nav-dot {
+  display: inline-block;
+  min-height: 1rem;
+  width: 1rem;
+  margin: 0 0.5rem;
+  border-radius: 2rem;
+  background-color: $grey;
+  transition: all .2s ease-out;
+
+  &-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &-active {
+    background-color: $blue-selected;
   }
 }

@@ -35,6 +35,9 @@ const Wizard = ({ children, initialValues, onSubmit }) => {
     }
   };
 
+  const renderNavDots = () => steps.map((step, index) => {
+    return <span key={`nav-dot-${index}`} className={`${styles["nav-dot"]} ${index === stepNumber ? styles["nav-dot-active"] : ''}`} />
+  });
   return (
     <Formik
       initialValues={snapshot}
@@ -47,8 +50,9 @@ const Wizard = ({ children, initialValues, onSubmit }) => {
           <SectionSeparator type={"triangle"} theme={"white"} separator_color={"white"}>
             <div className={styles['nav-bar']}>
               {stepNumber > 0 && <button onClick={() => previous(formik.values)} type="button">Back</button>}
+              <div className={styles["nav-dot-container"]}>{renderNavDots()}</div>
               {!isLastStep &&  <button disabled={formik.isSubmitting} type="submit">Next</button>}
-              {isLastStep && <SubmitButton disabled={formik.isSubmitting} type="submit">Submit</SubmitButton>}
+              {isLastStep && <SubmitButton disabled={formik.isSubmitting} onClick={formik.submitForm}>Submit</SubmitButton>}
             </div>
           </SectionSeparator>
         </Form>
