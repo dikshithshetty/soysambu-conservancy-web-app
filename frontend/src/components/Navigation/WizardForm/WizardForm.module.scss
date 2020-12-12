@@ -1,0 +1,31 @@
+@import "sass/base/base";
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 0 0.7rem ;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  transition: all .15s ease-out;
+
+  button {
+    color: $blue;
+    background-color: $white;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    transition: all .15s ease-out;
+
+    &:active,
+    &:focus {
+      outline: none;
+    }
+    // Place button on the right if only child.
+    &:only-child {
+      flex-grow: 1;
+      text-align: right;
+    }
+  }
+}

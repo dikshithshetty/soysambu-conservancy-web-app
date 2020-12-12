@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SectionHeader from "../../../components/Headers/SectionHeader/SectionHeader";
+import styles from "./AddSightingMenu.module.scss";
 import PageHeader from "../../../components/Headers/PageHeader/PageHeader";
+import SectionHeader from "../../../components/Headers/SectionHeader/SectionHeader";
 import WideButton from "../../../components/Buttons/WideButton/WideButton";
 import NavBar from "../../../components/Navigation/NavBar/NavBar";
-import styles from "./AddSightingMenu.module.scss";
 
 const AddSightingMenu = () => {
   return (
@@ -14,7 +14,7 @@ const AddSightingMenu = () => {
       <div className={styles["button-list"]}>
         <SectionHeader span_color="white">Select Animal</SectionHeader>
         <Link to="/sightings/add/giraffe">
-          <WideButton theme="yellow-dark">Rothschild's Giraffe</WideButton>
+          <WideButton theme="yellow-dark">Rothschild's Giraffes</WideButton>
         </Link>
         <WideButton theme="red">Lions</WideButton>
         <WideButton theme="blue">Colobus Monkeys</WideButton>

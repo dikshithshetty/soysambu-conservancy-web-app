@@ -1,25 +1,16 @@
 import React, { Fragment } from "react";
-import { Route, useLocation } from "react-router-dom";
-import SlideRoutes from "react-slide-routes";
+import { Route } from "react-router-dom";
 import Homepage from "./pages/Homepage/Homepage";
-import AddSightingMenu from "./pages/AddSighting/AddSightingMenu/AddSightingMenu";
-import AddSightingGiraffe from "./pages/AddSighting/Giraffe/AddSightingGiraffe/AddSightingGiraffe";
-import GiraffeCount from "./pages/AddSighting/Giraffe/GiraffeCount/GiraffeCount";
+import AddSightingMenu from "./pages/Sightings/AddSightingMenu/AddSightingMenu";
+import GiraffeWizardForm from "./pages/Sightings/AddSightingGiraffes/GiraffeWizardForm/GiraffeWizardForm";
+
 
 const App = () => {
-  let location = useLocation();
   return (
     <Fragment>
       <Route path="/" exact component={Homepage} />
-      <SlideRoutes
-        location={location}
-        duration={300}
-        pathList={["/sightings/add", "/sightings/add/giraffe", "/sightings/add/giraffe-count"]}
-      >
-        <Route path="/sightings/add" exact component={AddSightingMenu} />
-        <Route path="/sightings/add/giraffe" exact component={AddSightingGiraffe} />
-        <Route path="/sightings/add/giraffe-count" exact component={GiraffeCount} />
-      </SlideRoutes>
+      <Route path="/sightings/add" exact component={AddSightingMenu} />
+      <Route path="/sightings/add/giraffe" exact component={GiraffeWizardForm} />
     </Fragment>
   );
 };

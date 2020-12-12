@@ -1,7 +1,7 @@
-.row-page {
+.inner-page-no-header {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, 1fr) 5.75rem;
+  grid-template-rows: 1fr 5rem;
   height: 100vh;
   overflow: auto;
 }

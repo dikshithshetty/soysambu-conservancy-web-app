@@ -1,34 +1,39 @@
 import React, { useState } from "react";
 import * as _ from "lodash";
-import DraggerWrapper from "../../Dragger/DraggerWrapper/DraggerWrapper";
-import PlusMinusButton from "../../Buttons/PlusMinusButton/PlusMinusButton";
-import styles from "./DraggerGiraffes.module.scss";
+import styles from "./DraggerCategoryCount.module.scss";
+import { useField, useFormikContext } from "formik";
+import DraggerWrapper from "../../../Dragger/DraggerWrapper/DraggerWrapper";
+import PlusMinusButton from "../../../Buttons/PlusMinusButton/PlusMinusButton";
 
-const DraggerGiraffes = (props) => {
+const DraggerCategoryCount = (props) => {
   /*
     The Count and Category daggers' movement are synced using DraggerWrapper setPos
     and onFrame methods.
 
     Props:
   */
-  const categories = ["Feeding", "Standing", "Walking", "Lying", "Fighting", "Scratching"];
-  const showCategory = props.category === props.input.name;
+  const { setFieldValue } = useFormikContext();
+  const [field, meta] = useField(props);
+
+  const categories = props.items;
+  const showCategory = props.showCategoryView === field.name;
   const [categoryOrder, setCategoryOrder] = useState(categories);
 
   const updateCategoryOrder = () => {
-    const items = Object.keys(props.input.value);
+    const items = Object.keys(field.value);
     setCategoryOrder(items.concat(_.difference(categories, items)));
   };
+
 
   const renderInputHandler = (item) => (
     <input
       name={item}
       type="number"
-      value={props.input.value[item] || ""}
+      value={field.value[item] || ""}
       onChange={({ target }) => {
-        const state = props.input.value ? _.cloneDeep(props.input.value) : {};
+        const state = _.cloneDeep(field.value);
         state[target.name] = Number(target.value);
-        props.input.onChange(state);
+        setFieldValue(field.name, state);
       }}
       onBlur={({ target }) => {
         // Remove custom dragger element styling.
@@ -38,9 +43,9 @@ const DraggerGiraffes = (props) => {
           // TODO make sass utility classes for things like this.
           target.parentNode.classList.add(styles["fade-out"]);
           setTimeout(() => {
-            const state = props.input.value ? _.cloneDeep(props.input.value) : {};
+            const state = _.cloneDeep(field.value);
             delete state[target.name];
-            props.input.onChange(state);
+            setFieldValue(field.name, state);
             target.parentNode.classList.remove(styles["fade-out"]);
           }, 180);
         }
@@ -49,25 +54,24 @@ const DraggerGiraffes = (props) => {
   );
 
   const renderCountDragger = () => {
-    const items = Object.keys(props.input.value);
+    const items = Object.keys(field.value);
 
     const handleCountClick = (event) => {
       const [input] = event.children;
       input.focus();
       event.classList.add(styles["count-selected"]);
-      props.setCategory("");
+      props.setCategoryView("");
     };
 
     const handleCategoryClick = (event) => {
-      const state = props.input.value ? _.cloneDeep(props.input.value) : {};
+      const state = _.cloneDeep(field.value);
       state[event.value] = event.value in state ? state[event.value] + 1 : 1;
-      props.input.onChange(state);
+      setFieldValue(field.name, state);
     };
 
     return (
       <DraggerWrapper
         name={props.name}
-        key={props.name}
         items={showCategory ? categoryOrder : items}
         friction={0.9}
         resetPos={items.length <= 3 && !showCategory}
@@ -85,7 +89,7 @@ const DraggerGiraffes = (props) => {
       <PlusMinusButton
         active={showCategory}
         onClick={() => {
-          showCategory ? props.setCategory("") : props.setCategory(props.input.name);
+          showCategory ? props.setCategoryView("") : props.setCategoryView(props.name);
           updateCategoryOrder();
         }}
       />
@@ -93,4 +97,4 @@ const DraggerGiraffes = (props) => {
   );
 };
 
-export default DraggerGiraffes;
+export default DraggerCategoryCount;

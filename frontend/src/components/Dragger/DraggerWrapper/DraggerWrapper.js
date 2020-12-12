@@ -10,7 +10,7 @@ const DraggerWrapper = ({
   name,
   items,
   disabled = false,
-  friction = 0.8,
+  friction = 0.9,
   onStaticClick = null,
   elementStyling = "",
   elementAction = null,
