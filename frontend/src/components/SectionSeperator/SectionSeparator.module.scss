@@ -103,4 +103,8 @@
   &--white::before {
     background: $white;
   }
+
+  &--transparent::before {
+    background: transparent;
+  }
 }

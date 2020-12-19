@@ -7,6 +7,15 @@
    }
  }
 
+@keyframes slide {
+  0% {
+    transform: translateY(100rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 @keyframes bounce {
   0% {
     transform: translateY(0);

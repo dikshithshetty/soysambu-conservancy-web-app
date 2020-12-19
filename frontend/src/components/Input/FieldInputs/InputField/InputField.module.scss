@@ -2,7 +2,6 @@
 
 .input {
   display: flex;
-  margin-top: 0.25rem;
 
   &-button {
     position: relative;
@@ -54,6 +53,7 @@
 }
 
 .label {
+  width: 100%;
   font-weight: 700;
   color: $white;
   text-transform: capitalize;

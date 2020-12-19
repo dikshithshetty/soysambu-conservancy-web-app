@@ -5,6 +5,7 @@ import DateInputField from "../../../components/Input/FieldInputs/DateInputField
 import InputField from "../../../components/Input/FieldInputs/InputField/InputField";
 import DraggerSelection from "../../../components/Input/DraggerInputs/DraggerSelection/DraggerSelection";
 import styles from "./SightingForm.module.scss";
+import TimeInputField from "../../../components/Input/FieldInputs/TimeInputField/TimeInputField";
 
 // These categories are universal for all sightings.
 const weather = ["Sunny", "Partially\nCloudy", "Cloudy", "Rain"];
@@ -23,8 +24,8 @@ const SightingForm = (props) =>  {
         {/* Location info */}
         <SectionSeparator theme={props.theme}>
           <div className={styles["date-input"]}>
-            <DateInputField name="date" type="string"/>
-            <DateInputField name="time" type="time"/>
+            <DateInputField name="date" />
+            <TimeInputField name="time" />
           </div>
           <div className={styles["location-input"]}>
             <InputField name="longitude" />

@@ -7,8 +7,8 @@ import styles from "./GiraffeWizardForm.module.scss"
 const GiraffeWizardForm = () => (
   <WizardForm
     initialValues={{
-      date: new Date().toISOString(),
-      time: new Date().toISOString(),
+      date: '',
+      time: '',
       longitude: '',
       latitude: '',
       weather: '',

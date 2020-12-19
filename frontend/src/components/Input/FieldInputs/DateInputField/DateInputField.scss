@@ -1,0 +1,144 @@
+@import "sass/base/base";
+@import "../InputField/InputField.module.scss";
+
+.react-google-flight-datepicker {
+  margin-top: 0.25rem;
+  color: $grey;
+  height: inherit;
+  width: 100%;
+  text-transform: none;
+
+  .dialog-header,
+  .dialog-content,
+  .dialog-footer {
+    background-color: $white;
+  }
+
+  .date-picker {
+    border-radius: 2.5rem;
+    border: 2px solid $blue;
+    padding: 0 1.5rem 0 1.5rem;
+
+    &-input {
+      overflow: hidden;
+      height: calc(5rem - 4px) !important;
+    }
+
+    &-date-group {
+      height: 100%;
+    }
+  }
+
+  // Icons.
+  // Remove icons.
+  .icon-calendar,
+  .icon-arrow,
+  .change-date-group {
+    display: none !important;
+  }
+  .back-button {
+    padding-top: 0.25rem;
+    outline: none;
+    svg {
+      fill: $blue;
+    }
+  }
+
+  // Days, today, selected day(s).
+  .day {
+    font-size: 1.7rem;
+    padding-bottom: 0.125rem;
+  }
+  .day.highlight::after,
+  .day.highlight::before {
+    background: none;
+  }
+  .day.highlight::after {
+    border: 1px solid $blue;
+  }
+  .day.selected,
+  .day.selected.end {
+    color: $white;
+    outline: none;
+    &::after {
+      background-color: $red;
+      border: none;
+      outline: none;
+    }
+  }
+
+  // Headers, static calendar elements.
+  .date {
+    border: none;
+    background: transparent;
+    align-items: center;
+    justify-content: start;
+    padding: 0;
+
+    &:focus {
+      outline: none;
+      background: transparent;
+      &::after {
+        border: none;
+      }
+    }
+
+    // This is the header date input field when overlay is active.
+    &.is-focus {
+      height: calc(100% - 4px);
+      pointer-events: none;
+      padding-left: 1.5rem;
+      margin: 2px;
+      background-color: $white;
+
+      &:focus {
+        border: none;
+        outline: none;
+      }
+      &::after {
+        border-color: $blue;
+        padding: 0 0 0 1.75rem;
+        border-radius: 2.5rem;
+      }
+    }
+  }
+  .month-name {
+    color: $blue;
+    font-size: 1.8rem;
+  }
+  .weekday {
+    font-size: 1.4rem;
+  }
+
+  // This it the date input field.
+  .selected-date {
+    color: $grey;
+    justify-content: left;
+    align-items: center;
+    font-size: 1.7rem;
+    font-weight: 400;
+    &:focus {
+      outline: none;
+      border: none;
+    }
+  }
+
+  // Header, footer.
+  .dialog-header {
+    padding: 2.5rem 2.5rem 2.5rem 2rem;
+  }
+  .dialog-footer {
+    padding: 2rem 1.5rem 1.5rem 1rem;
+    .reset-button {
+      font-size: 1.6rem;
+      outline: none;
+    }
+    .submit-button {
+      outline: none;
+      font-size: 1.6rem;
+      text-transform: capitalize;
+      border-radius: 1.75rem;
+      background-color: $blue;
+    }
+  }
+}

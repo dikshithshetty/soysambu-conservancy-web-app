@@ -3,9 +3,9 @@
 
 .date-input {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-column-gap: 1.75rem;
-  justify-items: center;
+  justify-items: left;
   padding: 0 0.75rem 1rem 0.75rem;
 }
 
@@ -13,6 +13,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 1.75rem;
-  justify-items: center;
+  justify-items: left;
   padding: 0 0.75rem 1.5rem 0.75rem;
 }
