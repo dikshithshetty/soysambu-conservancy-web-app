@@ -24,7 +24,7 @@ const SightingForm = (props) =>  {
         {/* Location info */}
         <SectionSeparator theme={props.theme}>
           <div className={styles["date-input"]}>
-            <DateInputField name="date" />
+            <DateInputField name="datetime" />
             <TimeInputField name="time" />
           </div>
           <div className={styles["location-input"]}>

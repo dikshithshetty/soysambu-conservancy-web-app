@@ -11,7 +11,7 @@ const sectionStyling = {
   unidentified: { type: "curved", theme: "white" },
 };
 
-const categories = ["Feeding", "Standing", "Walking", "Lying", "Fighting", "Scratching"];
+const categories = ["feeding", "standing", "walking", "lying", "fighting", "scratching"];
 
 const GiraffeCountForm = () => {
   const [category, setCategory] = useState("");
