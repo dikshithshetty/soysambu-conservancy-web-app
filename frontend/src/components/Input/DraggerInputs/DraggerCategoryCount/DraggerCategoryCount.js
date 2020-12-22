@@ -13,7 +13,7 @@ const DraggerCategoryCount = (props) => {
     Props:
   */
   const { setFieldValue } = useFormikContext();
-  const [field] = useField(props);
+  const [field, meta] = useField(props);
 
   const categories = props.items;
   const showCategory = props.showCategoryView === field.name;

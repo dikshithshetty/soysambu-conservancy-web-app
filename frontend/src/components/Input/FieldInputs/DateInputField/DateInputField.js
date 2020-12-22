@@ -6,7 +6,7 @@ import "./DateInputField.scss";
 
 const DateInputField = (props) => {
   const { setFieldValue } = useFormikContext();
-  const [field] = useField(props);
+  const [field, meta] = useField(props);
   const [date, setDate] = useState(new Date());
 
   // Debounce setting formik value by 250ms.
@@ -37,6 +37,7 @@ const DateInputField = (props) => {
         startDatePlaceholder="Please select a date"
         highlightToday
         />
+        {meta.error}
     </label>
     )
   };

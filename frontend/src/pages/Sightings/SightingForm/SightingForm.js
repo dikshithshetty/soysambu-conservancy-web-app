@@ -28,8 +28,8 @@ const SightingForm = (props) =>  {
             <TimeInputField name="time" />
           </div>
           <div className={styles["location-input"]}>
-            <InputField name="longitude" />
-            <InputField name="latitude" />
+            <InputField name="longitude" type="number" />
+            <InputField name="latitude" type="number" />
           </div>
         </SectionSeparator>
 

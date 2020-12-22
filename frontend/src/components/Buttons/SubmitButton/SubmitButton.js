@@ -8,6 +8,7 @@ const SubmitButton = (props) => {
   return (
     <button
       type="button"
+      disabled={props.disabled}
       className={`${styles["submit-button"]}`}
       {...submitLongPress}
     >Submit</button>

@@ -7,14 +7,11 @@ import { FaClock } from "react-icons/fa";
 
 const TimeInputField = (props) => {
   const { setFieldValue } = useFormikContext();
-  const [field] = useField(props);
+  const [field, meta] = useField(props);
   const [time, setTime] = useState(dayjs(new Date()).format("HH:mm"));
 
   useEffect(() => {
-    dayjs.extend(customParseFormat);
-    if (dayjs(time, "HH:mm", true).isValid()) {
-      setFieldValue(field.name, time)
-    }
+    setFieldValue(field.name, time)
   }, [field.name, setFieldValue, time]);
 
 
@@ -34,6 +31,7 @@ const TimeInputField = (props) => {
                 onClick={() => setTime(dayjs(new Date()).format("HH:mm"))}><FaClock />
         </button>
       </div>
+      {meta.error}
     </label>
   )
 };

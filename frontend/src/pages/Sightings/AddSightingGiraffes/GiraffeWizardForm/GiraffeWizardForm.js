@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 import styles from "./GiraffeWizardForm.module.scss"
 import { createGiraffeSighting } from "../../../../redux/actions";
 import * as _ from "lodash";
+import { SightingFormSchema } from "../../SightingForm/SightingFormSchema";
+import { GiraffeCountFormSchema } from "../GiraffeCountForm/GiraffeCountFormSchema";
 
 const GiraffeWizardForm = (props) => {
   const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
@@ -40,7 +42,6 @@ const GiraffeWizardForm = (props) => {
     action(parsed_values);
   };
 
-
   return (
     <WizardForm
       initialValues={{
@@ -60,14 +61,14 @@ const GiraffeWizardForm = (props) => {
       {/* Location / general sighting form */}
       <WizardStep
         className={styles["inner-page"]}
-        onSubmit={() => console.log('Step1 onSubmit')}>
+        validationSchema={SightingFormSchema}>
         <SightingForm organism="Rothschild's Giraffe" theme="yellow-dark"/>
       </WizardStep>
 
       {/* Giraffe count form*/}
       <WizardStep
         className={styles["inner-page-no-header"]}
-        onSubmit={() => console.log('Step2 onSubmit')}>
+        validationSchema={GiraffeCountFormSchema}>
         <GiraffeCountForm/>
       </WizardStep>
     </WizardForm>
