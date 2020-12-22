@@ -3,6 +3,14 @@ from rest_framework.exceptions import ValidationError
 from .models import Sighting, GiraffeSighting, GiraffeCount
 
 
+class SightingListSerializer(serializers.ModelSerializer):
+    def to_representation(self, instance):
+        if isinstance(instance, GiraffeSighting):
+            return GiraffeSightingSerializer(instance=instance).data
+        else:
+            return SightingSerializer(instance=instance).data
+
+
 class SightingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sighting
@@ -16,11 +24,12 @@ class GiraffeCountSerializer(serializers.ModelSerializer):
 
 
 class GiraffeSightingSerializer(serializers.ModelSerializer):
+    organism = serializers.ReadOnlyField(default='GIRAFFE')
     counts = GiraffeCountSerializer(many=True)
 
     class Meta:
         model = GiraffeSighting
-        fields = ('id', 'datetime', 'latitude', 'longitude', 'weather', 'habitat', 'count', 'counts')
+        fields = ('id', 'organism', 'datetime', 'latitude', 'longitude', 'weather', 'habitat', 'count', 'counts')
 
     def validate_counts(self, counts):
         types = [count.get('type') for count in counts]

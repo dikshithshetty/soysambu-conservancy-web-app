@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-
+from model_utils.managers import InheritanceManager
 
 def get_longest_choice(choices):
     return len(max([choice[0] for choice in choices], key=len))
@@ -25,6 +25,9 @@ class Sighting(models.Model):
     # Coordinates with 5 decimal places add support for precision up to 1.1m.
     latitude = models.DecimalField(max_digits=7, decimal_places=5)  # longitude = -90 to 90
     longitude = models.DecimalField(max_digits=8, decimal_places=5)  # longitude = -180 to 180
+
+    # Allow fetching of submodels.
+    objects = InheritanceManager()
 
     class Meta:
         ordering = ['-datetime']

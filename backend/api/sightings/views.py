@@ -1,12 +1,16 @@
 from rest_framework import generics, permissions
-from .serializers import SightingSerializer, GiraffeSightingSerializer
+from .serializers import SightingListSerializer, GiraffeSightingSerializer
 from .models import Sighting, GiraffeSighting
 
 
-class SightingList(generics.ListAPIView):
-    serializer_class = SightingSerializer
+class SightingSubClassMixin(object):
+    def get_queryset(self):
+        return Sighting.objects.select_subclasses()
+
+
+class SightingList(SightingSubClassMixin, generics.ListAPIView):
+    serializer_class = SightingListSerializer
     # permission_classes = (permissions.IsAuthenticated,)
-    queryset = Sighting.objects.all()
 
 
 class GiraffeSightingList(generics.ListCreateAPIView):
