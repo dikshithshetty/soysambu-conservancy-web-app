@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useField, useFormikContext } from "formik";
 import dayjs from "dayjs";
-import customParseFormat from "dayjs/esm/plugin/customParseFormat";
 import styles from "../InputField/InputField.module.scss";
 import { FaClock } from "react-icons/fa";
 
@@ -22,6 +21,7 @@ const TimeInputField = (props) => {
         <input
           name={props.name}
           value={time}
+          onBlur={field.onBlur}
           onChange={(t) => setTime(t.target.value)}
           autoComplete="off"
           className={`${styles["input"]} ${styles["input-field"]} ${styles["input-field-has-button"]}`}
@@ -31,7 +31,7 @@ const TimeInputField = (props) => {
                 onClick={() => setTime(dayjs(new Date()).format("HH:mm"))}><FaClock />
         </button>
       </div>
-      {meta.error}
+      {meta.touched && meta.error ? <span>{meta.error}</span> : null}
     </label>
   )
 };

@@ -8,6 +8,7 @@ import { createGiraffeSighting } from "../../../../redux/actions";
 import * as _ from "lodash";
 import { SightingFormSchema } from "../../SightingForm/SightingFormSchema";
 import { GiraffeCountFormSchema } from "../GiraffeCountForm/GiraffeCountFormSchema";
+import { withRouter } from 'react-router';
 
 const GiraffeWizardForm = (props) => {
   const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
@@ -25,9 +26,9 @@ const GiraffeWizardForm = (props) => {
     });
     // Format datetime.
     const [hours, minutes] = values.time.split(":");
-    values.datetime.setHours(hours); values.datetime.setMinutes(minutes);
-    let timeZoneOffset = (values.datetime).getTimezoneOffset() * 60000; // Offset in milliseconds.
-    let localISOTime = (new Date(values.datetime - timeZoneOffset)).toISOString();
+    values.date.setHours(hours); values.date.setMinutes(minutes);
+    let timeZoneOffset = (values.date).getTimezoneOffset() * 60000; // Offset in milliseconds.
+    let localISOTime = (new Date(values.date - timeZoneOffset)).toISOString();
 
     const parsed_values = {
       datetime: localISOTime,
@@ -40,6 +41,7 @@ const GiraffeWizardForm = (props) => {
     };
 
     action(parsed_values);
+    props.history.push('/sightings/add');
   };
 
   return (
@@ -75,4 +77,4 @@ const GiraffeWizardForm = (props) => {
   );
 };
 
-export default connect(null, { createGiraffeSighting })(GiraffeWizardForm);
+export default withRouter(connect(null, { createGiraffeSighting })(GiraffeWizardForm));

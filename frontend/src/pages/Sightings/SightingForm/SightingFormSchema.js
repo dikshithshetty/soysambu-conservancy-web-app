@@ -5,7 +5,9 @@ export const SightingFormSchema = Yup.object().shape({
     .default(() => new Date())
     .required('Required'),
   time: Yup.string()
-    .matches('^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$')
+    .matches(
+      '^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$',
+      {message: "Time should be in military format (e.g. 16:15)"})
     .length(5)
     .trim()
     .required('Required'),

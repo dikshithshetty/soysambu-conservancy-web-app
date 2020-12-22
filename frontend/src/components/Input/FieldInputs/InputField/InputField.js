@@ -13,10 +13,11 @@ const InputField = (props) => {
         type={props.type}
         value={field.value}
         onChange={field.onChange}
+        onBlur={field.onBlur}
         autoComplete="off"
         className={`${styles["input-field"]}`}
       />
-      {meta.error}
+      {meta.touched && meta.error ? <span>{meta.error}</span> : null}
     </label>
   )
 };

@@ -57,6 +57,16 @@
   font-weight: 700;
   color: $white;
   text-transform: capitalize;
+
+  span {
+    &:first-letter {
+      text-transform: uppercase;
+    }
+    display: block;
+    text-transform: none;
+    color: $red;
+    font-size: 1.4rem;
+  }
 }
 
 .error {

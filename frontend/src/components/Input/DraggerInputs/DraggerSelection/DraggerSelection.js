@@ -19,7 +19,7 @@ const DraggerSelection = (props) => {
         elementStyling={`${styles["select"]} ${meta.error && meta.touched ? styles["error"] : ""}`}
         onStaticClick={(event) => setFieldValue(field.name, event.value)}
       />
-      {meta.error}
+      {meta.touched && meta.error ? <span>{meta.error}</span> : null}
     </label>
   )
 };
