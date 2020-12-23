@@ -5,7 +5,7 @@ import { FETCH_SIGHTINGS,
 
 export const fetchSightings = () => async dispatch => {
   const response = await sightings.get('');
-  dispatch({type: FETCH_SIGHTINGS, payload: response.data})
+  dispatch({type: FETCH_SIGHTINGS, payload: response.data.results})
 };
 
 export const fetchSighting = (id) => async dispatch => {
@@ -14,7 +14,7 @@ export const fetchSighting = (id) => async dispatch => {
 };
 
 export const createGiraffeSighting = (formValues) => async dispatch => {
-  const response = await sightings.post('/giraffes/', formValues);
+  const response = await sightings.post('giraffes/', formValues);
   console.log(response);
   dispatch({type: CREATE_SIGHTING, payload: response.data})
 };

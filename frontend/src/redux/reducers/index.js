@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
+import sightingsReducer from './sightingsReducer'
 
 export default combineReducers({
-  changeme: () => ("changeme"),
+  sightings: sightingsReducer,
 });
