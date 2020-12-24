@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'api.sightings',
-    'api.users'
 ]
 
 MIDDLEWARE = [
@@ -125,7 +124,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-AUTH_USER_MODEL = 'users.User'
+# AUTH_USER_MODEL = 'users.User'
 
 CORS_ALLOWED_ORIGINS = (
      'http://localhost:3000',  # React
