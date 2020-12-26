@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from model_utils.managers import InheritanceManager
 
+
 def get_longest_choice(choices):
     return len(max([choice[0] for choice in choices], key=len))
 

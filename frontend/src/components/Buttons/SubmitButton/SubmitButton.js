@@ -3,7 +3,7 @@ import styles from "./SubmitButton.module.scss";
 import useLongPress from '../../../hooks/useLongPress';
 
 const SubmitButton = (props) => {
-  const submitLongPress = useLongPress(props.onClick, 475);
+  const submitLongPress = useLongPress(props.onClick, 700);
 
   return (
     <button

@@ -1,1 +1,45 @@
 @import "sass/base/base";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+
+  div:not(:last-child) {
+    margin-right: 1rem;
+  }
+}
+
+.date {
+  color: $red;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2rem;
+}
+
+.time {
+  color: $grey;
+  font-size: 1.5rem;
+}
+
+.sighting  {
+  color: $navy;
+  padding: 1rem 0.6rem 0.9rem 0.6rem;
+  text-align: center;
+  background-color: $white;
+  border-radius: 0.75rem;
+  box-shadow: 4px 4px 5px rgba($black, .25);
+}
+
+.count {
+  font-size: 2.25rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+}
+
+.organism {
+  text-transform: lowercase;
+  &:first-letter {
+    text-transform: uppercase;
+  }
+}

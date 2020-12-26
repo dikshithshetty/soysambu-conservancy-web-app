@@ -9,6 +9,7 @@ import * as _ from "lodash";
 import { SightingFormSchema } from "../../SightingForm/SightingFormSchema";
 import { GiraffeCountFormSchema } from "../GiraffeCountForm/GiraffeCountFormSchema";
 import { withRouter } from 'react-router';
+import dayjs from "dayjs";
 
 const GiraffeWizardForm = (props) => {
   const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
@@ -26,12 +27,13 @@ const GiraffeWizardForm = (props) => {
     });
     // Format datetime.
     const [hours, minutes] = values.time.split(":");
+    // const offset  = new Date().getTimezoneOffset() / 60
     values.date.setHours(hours); values.date.setMinutes(minutes);
-    let timeZoneOffset = (values.date).getTimezoneOffset() * 60000; // Offset in milliseconds.
-    let localISOTime = (new Date(values.date - timeZoneOffset)).toISOString();
+    const localTime = dayjs(values.date).format('YYYY-MM-DDTHH:mmZ')
+    console.log(localTime);
 
     const parsed_values = {
-      datetime: localISOTime,
+      datetime: localTime,
       longitude: values.longitude,
       latitude: values.latitude,
       weather: values.weather.toUpperCase().replace('\n', '_'),
