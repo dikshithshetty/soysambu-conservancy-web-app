@@ -1,0 +1,31 @@
+// Titles
+.hero-title {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -35%);
+
+  font-family: $serif;
+  font-size: 4.6rem;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.header-title {
+  font-size: 3.8rem;
+  line-height: 1.2;
+}
+
+.header-title-subtitle {
+  font-size: 3rem;
+  line-height: 3.25rem;
+
+  span {
+    display: block;
+    font-size: 1.75rem;
+  }
+}
+
+.section-title {
+  font-family: $serif;
+}

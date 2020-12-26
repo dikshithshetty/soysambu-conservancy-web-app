@@ -1,0 +1,43 @@
+@import "sass/base/base";
+
+.blog {
+  &-preview {
+    display: flex;
+    line-height: 2rem;
+    align-items: center;
+    margin: 0.5rem 0;
+
+    &:not(:first-child) {
+      margin-top: 2rem;
+    }
+  }
+
+  &-thumbnail {
+    min-height: 6rem;
+    min-width: 6rem;
+    margin-right: 2rem;
+    border-radius: 50%;
+    background: $yellow-light; // placeholder
+  }
+
+  &-snippet {
+    font-size: 1.6rem;
+    font-weight: 400;
+
+    h3 {
+      font-weight: 400;
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-weight: 300;
+      padding-top: 0.2rem;
+      padding-bottom: 0.2rem;
+    }
+
+    span {
+      font-weight: 400;
+      font-style: italic;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@import "sass/base/base";
+@import "sass/layouts/standard-page";
+
+.button-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content repeat(4, 7rem);
+  grid-row-gap: 1rem;
+  text-align: center;
+  margin: 0 2rem;
+}

@@ -1,0 +1,78 @@
+/* --- Themes --- */
+.theme--yellow-dark {
+  background: $yellow-dark;
+
+  h1 {
+    color: $navy;
+  }
+  h2 {
+    color: $white;
+  }
+}
+
+.theme--yellow-light {
+  background: $yellow-light;
+
+  h1 {
+    color: $navy;
+  }
+  h2 {
+    color: $white;
+  }
+}
+
+.theme--yellow-lighter {
+  background: $yellow-lighter;
+
+  h1, h2 {
+    color: $navy;
+  }
+}
+
+.theme--red {
+  background: $red;
+  color: $white;
+}
+
+.theme--blue {
+  background: $blue;
+  color: $white;
+}
+
+.theme--blue-selected {
+  background: $blue-selected;
+  color: $white;
+
+  h2 {
+    color: $white;
+  }
+}
+
+.theme--green {
+  background: $green;
+  color: $white;
+
+  span {
+    color: $navy;
+  }
+}
+
+.theme--white {
+  background: $white;
+
+  h1, h2, h3, p {
+    color: $navy;
+  }
+
+  span {
+    color: $blue;
+  }
+}
+
+.theme--grey {
+  background: $white;
+
+  h2 {
+    color: $grey;
+  }
+}

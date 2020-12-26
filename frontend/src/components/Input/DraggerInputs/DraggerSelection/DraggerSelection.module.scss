@@ -1,0 +1,40 @@
+@import "sass/base/base";
+
+.label {
+  overflow: hidden;
+  color: $grey;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.select {
+  height: 11rem;
+  width: 9rem;
+  border: 2px solid $blue;
+  border-radius: 0.5rem;
+  background-color: $white;
+  box-shadow: 0 3px 10px rgba($black, .25);
+  transition: all .2s;
+
+  & svg {
+    position: absolute;
+    content: '';
+    top: 0.5rem;
+    right: 0.75rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    padding: 0.5rem;
+    background: $yellow-dark;
+    border-radius: 50%;
+    color: white;
+    animation: fadeIn .1s ease-in;
+  }
+
+  &:focus {
+      animation: bounce .3s ease-out;
+  }
+}
+
+.error {
+  border: 2px solid $red;
+}

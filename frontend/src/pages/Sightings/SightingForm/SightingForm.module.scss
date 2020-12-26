@@ -1,0 +1,18 @@
+@import "sass/base/base";
+@import "sass/layouts/inner-page";
+
+.date-input {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1.75rem;
+  justify-items: left;
+  padding: 0 0.75rem 1rem 0.75rem;
+}
+
+.location-input {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1.75rem;
+  justify-items: left;
+  padding: 0 0.75rem 1.5rem 0.75rem;
+}

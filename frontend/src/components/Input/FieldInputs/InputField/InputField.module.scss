@@ -1,0 +1,74 @@
+@import "sass/base/base";
+
+.input {
+  display: flex;
+
+  &-button {
+    position: relative;
+    width: 7.5rem;
+    border-radius: 0 2.5rem 2.5rem 0;
+    background: $blue-selected;
+    color: $white;
+    border: none;
+    font-size: 2.2rem;
+    text-align: center;
+
+    svg {
+      position: absolute;
+      top: 47%;
+      left: 45%;
+      transform: translate(-50%, -50%);
+    }
+
+    &:active,
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &-field {
+    height: 5rem;
+    width: 100%;
+    padding: 0 0 0 1.75rem;
+    border-radius: 2.5rem;
+    border: 2px solid $blue;
+    font-size: 1.7rem;
+    font-family: $sans-serif;
+    color: $grey;
+    transition: all .3s;
+
+    &:focus {
+      outline: none;
+      border: 2px solid $blue-selected;
+    }
+
+    &-has-button {
+      &,
+      &:focus {
+        border-right: none;
+      }
+      border-radius: 2.5rem 0 0 2.5rem;
+    }
+  }
+}
+
+.label {
+  width: 100%;
+  font-weight: 700;
+  color: $white;
+  text-transform: capitalize;
+
+  span {
+    &:first-letter {
+      text-transform: uppercase;
+    }
+    display: block;
+    text-transform: none;
+    color: $red;
+    font-size: 1.4rem;
+  }
+}
+
+.error {
+  border: 2px solid $red;
+}

@@ -1,0 +1,30 @@
+@import "sass/base/base";
+
+.wide-button {
+  &,
+  &:link,
+  &:visited {
+    display: inline-block;
+    height: 7rem;
+    width: 100%;
+    padding-left: 2rem;
+    border-radius: 1.5rem;
+
+    color: white;
+    font-size: 2.2rem;
+    text-align: left;
+    font-weight: 400;
+    letter-spacing: 1px;
+
+    // Changes for <button> default values
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
