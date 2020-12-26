@@ -1,0 +1,21 @@
+name: soysambu-conservancy-web-app
+
+static_sites:
+- name: frontend
+  github:
+    repo: Shmuppel/soysambu-conservancy-web-app
+    branch: master
+    deploy_on_push: true
+  source_dir: frontend
+  routes:
+  - path: /
+
+services:
+- name: backend
+  github:
+    repo: Shmuppel/soysambu-conservancy-web-app
+    branch: master
+    deploy_on_push: true
+  source_dir: backend
+  routes:
+  - path: /api
