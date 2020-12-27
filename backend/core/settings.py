@@ -115,8 +115,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 # Authentication
 # AUTH_USER_MODEL = 'users.User'
 
-
 # CORS
 CORS_ALLOWED_ORIGINS = (
-    os.getenv("DJANGO_ALLOWED_HOSTS", "http://127.0.0.1").split(",")
+    os.getenv("DJANGO_ALLOWED_HOSTS", "http://127.0.0.1,http://localhost:3000").split(",")
 )
