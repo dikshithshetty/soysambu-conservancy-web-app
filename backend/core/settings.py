@@ -42,7 +42,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-ROOT_URLCONF = 'backend.urls'
+ROOT_URLCONF = 'core.urls'
 
 TEMPLATES = [
     {
@@ -117,8 +117,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 
 # CORS
+print(os.getenv("DJANGO_ALLOWED_HOSTS"))
 CORS_ALLOWED_ORIGINS = (
-    'http://localhost:3000',  # React
-    os.getenv("DJANGO_ALLOWED_HOSTS").split(",")
+    *os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(","),
  )
-
