@@ -11,11 +11,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "False") == "True"
+DEBUG = os.getenv("DEBUG", "True") == "True"
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
-DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
+DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "True") == "True"
 
 # Application definition
 INSTALLED_APPS = [
@@ -117,7 +117,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 
 # CORS
-print(os.getenv("DJANGO_ALLOWED_HOSTS"))
 CORS_ALLOWED_ORIGINS = (
-    *os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(","),
- )
+    os.getenv("DJANGO_ALLOWED_HOSTS", "http://127.0.0.1").split(",")
+)
