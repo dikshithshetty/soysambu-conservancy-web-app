@@ -16,7 +16,7 @@ migrations/
 
 #venv
 */venv/
-
+.env
 
 
 ### FRONTEND
