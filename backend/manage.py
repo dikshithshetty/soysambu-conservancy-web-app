@@ -7,8 +7,6 @@ import sys
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings')
-    os.environ.setdefault('DJANGO_ALLOWED_HOSTS', 'http://localhost:3000')
-    os.environ.setdefault('DEVELOPMENT_MODE', 'True')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
